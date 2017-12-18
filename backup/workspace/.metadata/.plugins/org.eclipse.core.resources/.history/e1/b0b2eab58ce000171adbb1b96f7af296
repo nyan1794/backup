@@ -1,0 +1,9 @@
+package sample;
+
+public class abc {
+
+	public static void main(String[] args) {
+		suretsu int a=new suretsu(1,2,3);
+	}
+
+}

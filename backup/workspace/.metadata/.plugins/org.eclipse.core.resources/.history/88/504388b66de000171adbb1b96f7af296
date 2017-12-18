@@ -1,0 +1,8 @@
+import java.io.hello;
+
+public class javapractice{
+	public static void main(String[]args){
+		hello s=new hello();
+		System.out.println(s);
+	}
+}

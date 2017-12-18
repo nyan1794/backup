@@ -1,0 +1,10 @@
+package java.io;
+
+
+
+public class Hello {
+	public static void methodA() {
+	    String s = "HelloWorld";
+
+	}
+}

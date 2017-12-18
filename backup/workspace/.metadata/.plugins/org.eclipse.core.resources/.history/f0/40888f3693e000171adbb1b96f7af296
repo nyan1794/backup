@@ -1,0 +1,16 @@
+package sample;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+public class abc {
+
+	public static void main(String[] args)  {
+
+
+		int[] array = {,};
+		suretsu a=new suretsu(array);
+		a.hyoji();
+	}
+
+}

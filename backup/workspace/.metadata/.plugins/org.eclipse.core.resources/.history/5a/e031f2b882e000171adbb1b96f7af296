@@ -1,0 +1,7 @@
+
+public class setsumei {
+	public static void hello(){
+		String a="Hello";
+		System.out.println(a);
+	}
+}

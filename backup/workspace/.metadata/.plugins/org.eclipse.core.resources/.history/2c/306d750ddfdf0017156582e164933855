@@ -1,0 +1,9 @@
+import hello;
+
+public class javapractice{
+	public static void main(String[]arg){
+		hello a=new hello();
+		a.method();
+	}
+}
+
