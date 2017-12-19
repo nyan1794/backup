@@ -1,0 +1,16 @@
+package phone;
+
+public class phone implements mp3player {
+	public void play(){
+		System.out.println("再生する");
+	}
+	public void stop(){
+		System.out.println("停止する");
+	}
+	public void next(){
+		System.out.println("次へ");
+	}
+	public void back(){
+		System.out.println("戻る");
+	}
+}
