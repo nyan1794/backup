@@ -1,0 +1,6 @@
+public class javapractice{
+	public static void main(String[]args){
+		Setsumei abc=new setsumei();
+		hello();
+	}
+}

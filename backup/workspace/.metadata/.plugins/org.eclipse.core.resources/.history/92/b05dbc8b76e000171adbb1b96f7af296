@@ -1,0 +1,13 @@
+
+public class Test {
+		public static void main(String[]args){
+			Robot aibo= new Robot();
+			aibo.name="アイボ";
+			aibo.walk();
+			aibo.run();
+			Robot asimo=new Robot();
+			asimo.name="アシモ";
+			asimo.walk();
+			asimo.run();
+		}
+}

@@ -1,0 +1,11 @@
+<script class="left" type="text/javascript">
+                for(var i=1;i<=19;i++){
+    document.write("<h1><p>Java"+i+"</p></h1>")
+    document.write("<object id='any"+i+"' data='java"+i+".pdf' type='application/pdf'");
+                }
+            </script>
+
+
+///////////////////////////////////////
+              <h1></h1>
+            <object id="any" data=".pdf" type="application/pdf"></object>

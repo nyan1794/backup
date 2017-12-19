@@ -1,0 +1,10 @@
+package java.io;
+
+public class hello {
+
+	public hello() {
+		String a=("hello");
+		System.out.println(a);
+	}
+
+}

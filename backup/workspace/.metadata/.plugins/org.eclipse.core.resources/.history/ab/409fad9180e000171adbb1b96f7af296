@@ -1,0 +1,11 @@
+public class javapractice{
+	public static void main(String[]args){
+		String hello=new String();
+		hello="wtf";
+		System.out.println(hello);
+	}
+	public static void hello() {
+		String hello=null;
+		System.out.println(hello);
+	}
+}
