@@ -1,3 +1,0 @@
-$(function(){
-    $(".bxslider").bxSlider();
-});

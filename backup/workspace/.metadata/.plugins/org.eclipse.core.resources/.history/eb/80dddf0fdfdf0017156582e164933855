@@ -1,9 +1,0 @@
-
-
-
-public class hello {
-	public static void method(String[]arg){
-    String s = new String("hello");
-    System.out.println(s);
-}
-}

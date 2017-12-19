@@ -1,9 +1,0 @@
-package java.io;
-
-
-public class hello {
-	public static void methodA(String[]arg){
-    String s = new String("hello");
-    System.out.println(s);
-}
-}
