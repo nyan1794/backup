@@ -1,0 +1,43 @@
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+		Person taro =new Person();
+		taro.name="山田太郎";
+		taro.age=20;
+
+		Person jiro=new Person();
+		jiro.name="山田二郎";
+		jiro.age=17;
+
+		Person kenta=new Person();
+		kenta.name="南里健太";
+		kenta.age=21;
+
+		Person jiro2=new Person();
+		jiro2.name="木村二郎";
+		jiro2.age=18;
+
+		Person hanako=new Person();
+		hanako.name="鈴木花子";
+		hanako.age=16;
+
+
+		System.out.println(taro.name);			//山田太朗
+		System.out.println(taro.age);
+
+		System.out.println(jiro.name);			//山田二郎
+		System.out.println(jiro.age);
+
+		System.out.println(kenta.name);			//南里健太
+		System.out.println(kenta.age);
+
+		System.out.println(jiro2.name);			//木村二郎
+		System.out.println(jiro2.age);
+
+		System.out.println(hanako.name);		//鈴木花子
+		System.out.println(hanako.age);
+	}
+
+}
