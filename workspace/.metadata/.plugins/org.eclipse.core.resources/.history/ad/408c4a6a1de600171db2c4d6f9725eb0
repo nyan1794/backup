@@ -1,0 +1,13 @@
+
+public class Android extends Smartphone {
+
+	public static void main(String[] args) {
+		Smartphone sp=new Smartphone();
+		sp.play();
+		sp.stop();
+		sp.next();
+		sp.back();
+
+	}
+
+}

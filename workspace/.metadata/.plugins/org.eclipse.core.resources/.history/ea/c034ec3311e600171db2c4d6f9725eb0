@@ -1,0 +1,4 @@
+
+public class SmartPhone extends Mp3player {
+
+}

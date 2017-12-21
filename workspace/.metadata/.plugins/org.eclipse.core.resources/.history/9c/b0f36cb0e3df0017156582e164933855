@@ -1,7 +1,0 @@
-public class javapractice{
-	public static void main(String[]arg){
-		String s=new hello();
-
-	}
-}
-

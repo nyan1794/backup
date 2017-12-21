@@ -1,0 +1,4 @@
+
+public class Smartphone implements Mp3player{
+
+}

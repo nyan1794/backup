@@ -1,9 +1,0 @@
-
-public class Test {
-		public static void main(String[]args){
-				Person a=new Person();
-				a.name="Aさん";
-				a.age=24;
-				System.out.println(a.name+a.age);
-		}
-}

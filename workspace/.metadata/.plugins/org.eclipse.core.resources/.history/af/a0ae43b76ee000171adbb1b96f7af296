@@ -1,9 +1,0 @@
-public class javapractice{
-	public static void main(String[]args){
-		hello();
-	}
-	public hello() {
-		String a=("hello");
-		System.out.println(a);
-	}
-}
