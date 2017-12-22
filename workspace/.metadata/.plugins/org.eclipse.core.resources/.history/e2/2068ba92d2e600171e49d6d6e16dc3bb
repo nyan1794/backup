@@ -1,0 +1,9 @@
+@WebServlet("/InquiryServlet")
+public class InquiryServlet extends HttpServlet{
+	public InquiryServlet(){
+		super();
+	}
+	protected void doPost(HttpServletRequest req,HttpServletResponse res){
+
+	}
+}
