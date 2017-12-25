@@ -23,5 +23,7 @@
 		<input type="submit" value="送信">
 
 	</form>
+	<br>
+	<input type="button" value="MysqlServlet" onClick="location.href='MySQLServlet'">
 </body>
 </html>

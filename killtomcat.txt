@@ -1,0 +1,3 @@
+ps -ax | grep tomcat
+
+kill -9 tomcatのid

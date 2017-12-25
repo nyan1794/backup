@@ -1,0 +1,9 @@
+@WebServlet("/MySQLServlet")
+public class MySQLServlet extends HttpServlet(){
+		MySQLServlet(){
+			super();
+		}
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException IOException{
+
+	}
+}
