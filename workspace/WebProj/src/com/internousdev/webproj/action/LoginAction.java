@@ -10,10 +10,10 @@ public class LoginAction extends ActionSupport {
 		return SUCCESS;
 
 	}
-	public String getUserName(){
+	public String getUsername(){
 		return username;
 	}
-	public void setUserName(String username){
+	public void setUsername(String username){
 		this.username=username;
 	}
 	public String getPassword(){
@@ -21,8 +21,5 @@ public class LoginAction extends ActionSupport {
 	}
 	public void setPassword(String password){
 		this.password=password;
-	}
-	public void showUsername(){
-		System.out.println(username);
 	}
 }

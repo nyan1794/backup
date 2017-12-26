@@ -1,2 +1,0 @@
-import java.sql.SQLException;
-import com.mysql.jdbc.Connection;
