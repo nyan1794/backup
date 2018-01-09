@@ -1,9 +1,0 @@
-import java.util.HashMap;
-import java.util.Map;
-
-public class mapp {
-	Map<String,Object> map=new HashMap<String,Object>(){
-		put("体重",63);
-		put("体型","太め");
-	}
-}

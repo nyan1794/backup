@@ -1,0 +1,11 @@
+table{
+	width:auto;
+	border-spacing:0;
+	font-size:14px;
+}
+table th{
+	color:#fff;
+	padding:8px 15px;
+	background:#258;
+	background:-moz-liner-gradient()
+}

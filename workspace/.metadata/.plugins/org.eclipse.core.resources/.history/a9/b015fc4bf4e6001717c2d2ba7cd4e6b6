@@ -1,7 +1,0 @@
-@WebServlet("/MySQLServlet")
-public class MySQLServlet extends HttpServlet(){
-		MySQLServlet(){
-			super();
-		}
-
-}
