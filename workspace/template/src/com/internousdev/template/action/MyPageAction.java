@@ -5,6 +5,8 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.template.dao.MyPageDAO;
+import com.internousdev.template.dto.MyPageDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class MyPageAction extends ActionSupport implements SessionAware{
@@ -21,7 +23,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 			session.put("buyItem_name",myPageDTO.getItemName());
 			session.put("total_price",myPageDTO.getTotalPrice());
 			session.put("total_count",myPageDTO.getTotalCount());
-			session.put("total_payment",myPageDTO.getTotalPayment());
+			session.put("total_payment",myPageDTO.getPayment());
 			session.put("message","");
 		}else if(deleteFlg.equals("1")){
 			delete();
@@ -33,7 +35,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		String item_transaction_id=session.get("id").toString();
 		String user_master_id=session.get("login_user_id").toString();
 
-		int res=myPageDAO.buyHistoryDelete(item_transaction_id,user_master_id);
+		int res=myPageDAO.buyItemHistoryDelete(item_transaction_id,user_master_id);
 		if(res>0){
 			session.put("message","商品情報を正しく削除しました。");
 		}else if(res==0){

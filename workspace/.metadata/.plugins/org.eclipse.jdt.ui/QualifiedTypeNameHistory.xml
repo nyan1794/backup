@@ -48,10 +48,12 @@
 <fullyQualifiedTypeName name="com.internousdev.template.util.DateUtil"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="com.internousdev.template.dao.BuyItemCompleteDAO"/>
-<fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
-<fullyQualifiedTypeName name="org.apache.struts2.interceptor.SessionAware"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="com.internousdev.template.util.DBConnector"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.internousdev.template.dao.MyPageDAO"/>
+<fullyQualifiedTypeName name="com.internousdev.template.dto.MyPageDTO"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="org.apache.struts2.interceptor.SessionAware"/>
+<fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
 </qualifiedTypeNameHistroy>
