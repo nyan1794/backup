@@ -1,7 +1,0 @@
-package com.internousdev.webproj5.action;
-
-public class WelcomestrutsAction extends ActionSupport{
-	public String execute(){
-		return SUCCESS;
-	}
-}

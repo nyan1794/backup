@@ -2,7 +2,6 @@ package com.internousdev.template.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.internousdev.template.util.DBConnector;
@@ -29,8 +28,7 @@ public class UserCreateCompleteDAO {
 			preparedStatement.setString(3,userName);
 			preparedStatement.setString(4,dateUtil.getDate());
 
-			ResultSet resultSet=preparedStatement.executeQuery();
-			System.out.println(resultSet);
+			preparedStatement.execute();
 		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{
