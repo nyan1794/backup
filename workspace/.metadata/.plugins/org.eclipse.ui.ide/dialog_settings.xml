@@ -8,6 +8,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/kentananri/backup/workspace/ecsite 個人作成用"/>
 			<item value="/Users/kentananri/backup/workspace/template 比較用"/>
 			<item value="/Users/kentananri/backup/internous_text/11 - ECサイト 初級(ログイン認証)/template"/>
 			<item value="/Users/kentananri/backup/workspace/template"/>
@@ -19,7 +20,6 @@
 	<section name="NewWizardAction">
 		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.wst.web.ui"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
