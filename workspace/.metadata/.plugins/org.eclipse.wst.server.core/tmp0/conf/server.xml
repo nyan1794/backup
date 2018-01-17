@@ -124,7 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="/Users/kentananri/backup/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/Users/kentananri/backup/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ecsite 個人作成用" path="/ecsite" reloadable="false" source="org.eclipse.jst.jee.server:ecsite 個人作成用"/><Context docBase="/Users/kentananri/backup/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/WebProj2" path="/WebProj2" reloadable="false" source="org.eclipse.jst.jee.server:WebProj2"/></Host>
+      <Context docBase="/Users/kentananri/backup/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/Users/kentananri/backup/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ecsite 個人作成用" path="/ecsite" reloadable="false" source="org.eclipse.jst.jee.server:ecsite 個人作成用"/></Host>
     </Engine>
   </Service>
 </Server>

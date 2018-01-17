@@ -25,7 +25,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	/**
 	 * マイページ情報格納DTO
 	 */
-	public ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
+	public ArrayList<MyPageDTO> myPageList = new ArrayList<>();
 
 	/**
 	 * 削除フラグ
@@ -41,6 +41,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	 *
 	 * @author internous
 	 */
+
 	public String execute() throws SQLException {
 
 		if (!session.containsKey("id")) {
@@ -49,14 +50,11 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 
 		// 商品履歴を削除しない場合
 		if(deleteFlg == null) {
-			String item_transaction_id = session.get("id").toString();
+
 			String user_master_id = session.get("login_user_id").toString();
 
-			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
+			myPageList=myPageDAO.getMyPageUserInfo(user_master_id);
 
-			if (myPageList.size()==0) {
-				myPageList = null;
-			}
 		// 商品履歴を削除する場合
 		} else if(deleteFlg.equals("1")) {
 			delete();
@@ -73,11 +71,11 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	 */
 	public void delete() throws SQLException {
 
-		String item_transaction_id = session.get("id").toString();
+
 		String user_master_id = session.get("login_user_id").toString();
 
-		int res = myPageDAO.buyItemHistoryDelete(item_transaction_id, user_master_id,id);
-		myPageList=myPageDAO.getMyPageResult(item_transaction_id, user_master_id);
+		int res = myPageDAO.buyItemHistoryDelete(user_master_id,id);
+		myPageList=myPageDAO.getMyPageResult(user_master_id);
 		if(res > 0) {
 			setMessage("商品情報を正しく削除しました。");
 			if(myPageList.size()==0){

@@ -79,8 +79,7 @@
 		<div>
 			<s:form>
 			<s:if test="#session.totalPrice != 0">
-				<s:iterator value="#session.buyItemList">
-				<s:if test="count != 0">
+				<s:iterator value="#session.buyItemConfirmList">
 				<tr>
 					<td>商品名</td>
 					<td><s:property value="itemName" /></td>
@@ -96,7 +95,6 @@
 				<tr>
 					<td><br><br></td>
 				</tr>
-				</s:if>
 				</s:iterator>
 				<tr>
 					<td>合計金額</td>

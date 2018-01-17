@@ -1,12 +1,16 @@
+import java.util.Random;
 
 public class Person {
-		public String name=null;
-		public int age=0;
-		public Person(String name,int age){
-		this.name=name;
-		this.age=age;
-		}
-		public void writename(){
-			System.out.println(this.name+"さんは"+this.age+"歳です");
+		public void rand(){
+			Random rand= new Random();
+			int[] num=new int[8];
+			String[] st=new String[8];
+			String randomNum="";
+			for (int i=0;i<8;i++){
+				num[i]=rand.nextInt(10);
+				st[i]=String.valueOf(num[i]);
+				randomNum=randomNum+st[i];
+			}
+			System.out.println(randomNum);
 		}
 }

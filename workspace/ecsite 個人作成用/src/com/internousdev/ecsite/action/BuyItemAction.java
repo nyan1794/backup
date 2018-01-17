@@ -1,6 +1,7 @@
 
 package com.internousdev.ecsite.action;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -26,6 +27,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	 */
 	public Map<String, Object>  session;
 
+	public List<BuyItemDTO> buyItemConfirmList = new ArrayList<BuyItemDTO>();
 
 
 	/**
@@ -52,11 +54,18 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 
 		}
+//		int count=buyItemList.size();
+		int j=0;
 		for(int i=0;buyItemList.size()>i;i++){
 			buyItemList.get(i).setTotalPrice(totalPrice);
+			int itemcount = buyItemList.get(i).getCount();
+			if(!(itemcount == 0)){
+				buyItemConfirmList.add(j,buyItemList.get(i));
+				j++;
+			}
 		}
 		session.put("totalPrice",totalPrice);
-		session.put("buyItemList",buyItemList);
+		session.put("buyItemConfirmList",buyItemConfirmList);
 		return result;
 	}
 
@@ -67,8 +76,13 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	public void setCount(List<Integer> count){
 		this.count=count;
 	}
-	public List<Integer> getCount(){
-		return count;
+
+	public List<BuyItemDTO> getBuyItemConfirmList() {
+		return buyItemConfirmList;
+	}
+
+	public void setBuyItemConfirmList(List<BuyItemDTO> buyItemConfirmList) {
+		this.buyItemConfirmList = buyItemConfirmList;
 	}
 
 }

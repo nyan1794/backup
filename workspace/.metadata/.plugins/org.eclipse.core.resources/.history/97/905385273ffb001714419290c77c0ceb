@@ -1,0 +1,12 @@
+import java.util.Random;
+
+public class Person {
+		public void rand(){
+			Random rand= new Random();
+			int[] num=new int[8];
+			for (int i=0;i<8;i++){
+				num[i]=rand.nextInt(10);
+			}
+			System.out.println(num);
+		}
+}
