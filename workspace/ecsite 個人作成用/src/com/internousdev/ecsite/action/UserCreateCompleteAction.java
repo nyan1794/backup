@@ -18,16 +18,20 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 
 	public Map<String,Object> session;
 
+	private String errorMassage;
+
 	private UserCreateCompleteDAO userCreateCompleteDAO = new UserCreateCompleteDAO();
 
 	public String execute() throws SQLException {
-
-		userCreateCompleteDAO.cerateUser(session.get("loginUserId").toString(),
+		String result = ERROR;
+		if(userCreateCompleteDAO.cerateUser(session.get("loginUserId").toString(),
 				session.get("loginPassword").toString(),
-				session.get("userName").toString());
+				session.get("userName").toString())!=0){
 
-		String result = SUCCESS;
-
+		result = SUCCESS;
+		}else{
+		setErrorMassage("このユーザーIDは既に使われています。");
+		}
 		return result ;
 	}
 
@@ -53,6 +57,15 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+
+	public String getErrorMassage() {
+		return errorMassage;
+	}
+
+	public void setErrorMassage(String errorMassage) {
+		this.errorMassage = errorMassage;
 	}
 
 	@Override

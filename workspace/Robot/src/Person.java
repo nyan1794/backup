@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Person {
-		public void rand(){
+		public void getOrderNum(){
 			Random rand= new Random();
 			int[] num=new int[8];
 			String[] st=new String[8];

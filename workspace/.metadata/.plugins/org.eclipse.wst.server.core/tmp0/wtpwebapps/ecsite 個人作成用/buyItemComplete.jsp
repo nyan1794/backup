@@ -70,6 +70,7 @@
 		</div>
 		<div>
 			<p>購入手続きが完了致しました。</p>
+			<h3>注文番号は<s:property value="#session.orderNum"/>です</h3>
 			<div>
 				<a href='<s:url action="MyPageAction" />'>マイページ</a><span>から購入履歴の確認が可能です。</span>
 				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>

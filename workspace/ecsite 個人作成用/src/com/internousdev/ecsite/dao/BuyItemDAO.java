@@ -35,10 +35,10 @@ public class BuyItemDAO {
 				buyItemDTO.setId(resultSet.getInt("id"));
 				buyItemDTO.setItemName(resultSet.getString("item_name"));
 				buyItemDTO.setItemPrice(Integer.parseInt(resultSet.getString("item_price")));
+				buyItemDTO.setItemStock(resultSet.getInt("item_stock"));
 				buyItemList.add(buyItemDTO);
 
 			}
-
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

@@ -41,6 +41,7 @@
 		<!-- UserCreateCompleteAction -->
 		<action name="UserCreateCompleteAction" class="com.internousdev.ecsite.action.UserCreateCompleteAction" method="execute">
 			<result name="success">userCreateComplete.jsp</result>
+			<result name="error">userCreate.jsp</result>
 		</action>
 
 		<!-- BuyItemAction -->
@@ -68,8 +69,38 @@
 
 		<!-- LogoutAction -->
 		<action name="LogoutAction" class="com.internousdev.ecsite.action.LogoutAction" method="execute">
-			<result name="success">login.jsp</result>
+			<result name="success">home.jsp</result>
 		</action>
 
+		<!-- 自己制作　ショップ機能 -->
+		<action name="ShopAction" class="com.internousdev.ecsite.action.ShopAction" method="execute">
+			<result name="success">shopLogin.jsp</result>
+		</action>
+
+		<action name="ShopLoginAction" class="com.internousdev.ecsite.action.ShopLoginAction" method="execute">
+			<result name="success">shopMain.jsp</result>
+			<result name="error">shopLogin.jsp</result>
+		</action>
+
+		<action name="ItemAddPageAction" class="com.internousdev.ecsite.action.ItemAddPageAction" method="execute">
+			<result name="success">itemAddPage.jsp</result>
+		</action>
+		<action name="ItemAddConfirmAction" class="com.internousdev.ecsite.action.ItemAddConfirmAction" method="execute">
+			<result name="success">itemAddConfirmPage.jsp</result>
+			<result name="error">itemAddPage.jsp</result>
+		</action>
+		<action name="ItemAddCompleteAction" class="com.internousdev.ecsite.action.ItemAddCompleteAction" method="execute">
+			<result name="success">itemAddCompletePage.jsp</result>
+			<result name="error">itemAddError.jsp</result>
+		</action>
+		<action name="ShopErrorAction" class="com.internousdev.ecsite.action.ShopErrorAction" method="execute">
+			<result name="success">home.jsp</result>
+		</action>
+		<action name="GoShopMainAction" class="com.internousdev.ecsite.action.GoShopMainAction" method="execute" >
+			<result name="success">shopMain.jsp</result>
+		</action>
+		<action name="ShopLogoutAction" class="com.internousdev.ecsite.action.ShopLogoutAction" method="execute">
+			<result name="success">home.jsp</result>
+		</action>
 	</package>
 </struts>

@@ -8,6 +8,8 @@ public class BuyItemDTO {
 
 	public int itemPrice;
 
+	private int itemStock;
+
 	private int count;
 
 	private String pay;
@@ -67,5 +69,13 @@ public class BuyItemDTO {
 	}
 	public void setTotalPrice(int totalPrice){
 		this.totalPrice=totalPrice;
+	}
+
+	public int getItemStock() {
+		return itemStock;
+	}
+
+	public void setItemStock(int itemStock) {
+		this.itemStock = itemStock;
 	}
 }

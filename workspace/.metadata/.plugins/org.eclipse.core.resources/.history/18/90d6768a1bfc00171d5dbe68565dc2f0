@@ -1,0 +1,35 @@
+package com.internousdev.ecsite.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.internousdev.ecsite.dto.ShopLoginDTO;
+import com.internousdev.ecsite.util.DBConnector;
+
+public class ShopLoginDAO {
+	private DBConnector dbConnector=new DBConnector();
+	private Connection connection=dbConnector.getConnection();
+	private ShopLoginDTO shopLoginDTO=new ShopLoginDTO();
+
+	public ShopLoginDTO shopLoginSQL(String shopLoginId,String shopLoginPassword) throws SQLException{
+		String sql ="SELECT * FROM shop_login_transaction WHERE shop_id=? AND shop_pass=?";
+			try{
+			PreparedStatement preparedStatement=connection.prepareStatement(sql);
+			preparedStatement.setString(1,shopLoginId);
+			preparedStatement.setString(2,shopLoginPassword);
+			ResultSet resultSet=preparedStatement.executeQuery();
+			if(resultSet.next()){
+				shopLoginDTO.setShopLoginId(resultSet.getString("shop_id"));
+				shopLoginDTO.setShopLoginPassword(resultSet.getString("shop_pass"));
+				shopLoginDTO.setShopName(resultSet.getString("shop_name"));
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			connection.close();
+		}
+			return result;
+	}
+}

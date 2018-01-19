@@ -34,6 +34,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	 */
 	private String loginPassword;
 
+	private String errorMassage;
+
 	/**
 	 * ログイン情報を格納
 	 */
@@ -60,7 +62,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	public String execute() {
 
 		String result = ERROR;
-
+		errorMassage="ログインに失敗しました。";
 		// ログイン実行
 		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword);
 
@@ -71,6 +73,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			String id="loginComplete";
 			result = SUCCESS;
 			session.put("login_user_id",loginDTO.getLoginId());
+
+			errorMassage=null;
 			// アイテム情報を取得
 			List<BuyItemDTO> buyItemList = buyItemDAO.getBuyItemInfo();
 			session.put("buyItemList",buyItemList);
@@ -99,8 +103,16 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		this.loginPassword = loginPassword;
 	}
 
+	public String getErrorMassage(){
+		return errorMassage;
+	}
+	public void setErrorMassage(String errorMassage){
+		this.errorMassage=errorMassage;
+	}
+
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
+
 }

@@ -1,0 +1,7 @@
+package com.internousdev.ecsite.action;
+
+public class ShopAction extends ActionSupport{
+	public String execute(){
+		String result=SUCCESS;
+	}
+}

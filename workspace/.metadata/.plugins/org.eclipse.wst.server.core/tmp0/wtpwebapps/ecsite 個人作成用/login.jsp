@@ -76,6 +76,9 @@
 		</div>
 		<div>
 			<h3>商品を購入する際にはログインをお願いします。</h3>
+			<s:if test="errorMassage != null">
+				<h3><s:property value="errorMassage" /></h3>
+			</s:if>
 			<s:form action="LoginAction">
 				<s:textfield name="loginUserId"/>
 				<s:password name="loginPassword"/>

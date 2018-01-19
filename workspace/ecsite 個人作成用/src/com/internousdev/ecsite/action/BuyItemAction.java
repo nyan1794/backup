@@ -40,8 +40,6 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 		String result = SUCCESS;
 		int totalPrice=0;
 		List<BuyItemDTO> buyItemList = (List<BuyItemDTO>)session.get("buyItemList");
-		// for文でくり返す。
-		//		int index=buyItemList.size();
 		for(int i=0; buyItemList.size() > i; i++) {
 
 			int intPrice = buyItemList.get(i).getItemPrice();
@@ -54,7 +52,6 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 
 		}
-//		int count=buyItemList.size();
 		int j=0;
 		for(int i=0;buyItemList.size()>i;i++){
 			buyItemList.get(i).setTotalPrice(totalPrice);
@@ -84,5 +81,6 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	public void setBuyItemConfirmList(List<BuyItemDTO> buyItemConfirmList) {
 		this.buyItemConfirmList = buyItemConfirmList;
 	}
+
 
 }

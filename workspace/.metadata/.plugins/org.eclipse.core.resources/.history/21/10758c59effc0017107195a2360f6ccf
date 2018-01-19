@@ -1,0 +1,9 @@
+package com.internousdev.ecsite.dto;
+
+public class SellItemConfirmDTO {
+	private String sellItemName;
+	private String sellItemPrice;
+	private String sellItemStock;
+	private String sellItemId;
+
+}

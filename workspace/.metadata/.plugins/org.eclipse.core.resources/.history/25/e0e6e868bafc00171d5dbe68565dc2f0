@@ -1,0 +1,61 @@
+package com.internousdev.ecsite.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ecsite.dao.ShopLoginDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ShopLoginAction extends ActionSupport implements SessionAware{
+	private String shopLoginId;
+	private String shopLoginPassword;
+	private String Massage="ログインに失敗しました。";
+	public Map<String,Object> session;
+
+	private ShopLoginDAO shopLoginDAO=new ShopLoginDAO();
+
+	public String execute(){
+	String result=ERROR;
+
+	String LoginPara = shopLoginDAO.shopLoginSQL(shopLoginId, shopLoginPassword);
+	System.out.println(shopLoginId);
+	System.out.println(shopLoginPassword);
+	if(LoginPara.equals(0)){
+		result =ERROR;
+	}else if(LoginPara.equals("loginsuccess")){
+		session.put("shopLoginId",shopLoginId);
+		session.put("shopLoginPass",shopLoginPassword);
+		result=SUCCESS;
+		setMassage(null);
+	}
+	return result;
+	}
+
+	public String getShopLoginId() {
+		return shopLoginId;
+	}
+	public void setShopLoginId(String shopLoginId) {
+		this.shopLoginId = shopLoginId;
+	}
+
+	public String getShopLoginPassword() {
+		return shopLoginPassword;
+	}
+	public void setShopLoginPassword(String shopLoginPassword) {
+		this.shopLoginPassword = shopLoginPassword;
+	}
+
+	@Override
+	public void setSession(Map<String,Object> session){
+		this.session=session;
+	}
+
+	public String getMassage() {
+		return Massage;
+	}
+	public void setMassage(String massage) {
+		Massage = massage;
+	}
+
+}
