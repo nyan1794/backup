@@ -98,6 +98,14 @@
 						<input type="text" name="userName" value="" />
 					</td>
 				</tr>
+				<tr>
+					<td>
+						<label>メールアドレス:</label>
+					</td>
+					<td>
+						<input type="text" name="email" value="" />
+					</td>
+				</tr>
 				<s:submit value="登録"/>
 			</s:form>
 			</table>

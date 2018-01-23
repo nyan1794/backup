@@ -1,0 +1,26 @@
+package com.internousdev.ecsite.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class GoShopMainFromUpdateAction extends ActionSupport implements SessionAware{
+	public Map<String,Object> session;
+
+	public String execute(){
+		session.remove("oldItemName");
+		session.remove("oldItemPrice");
+		session.remove("oldItemStock");
+		session.remove("newItemName");
+		session.remove("newItemStock");
+		session.remove("newItemStock");
+		return SUCCESS;
+	}
+
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+}

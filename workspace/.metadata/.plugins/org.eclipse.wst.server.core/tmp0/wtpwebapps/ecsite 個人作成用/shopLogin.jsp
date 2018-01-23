@@ -63,11 +63,19 @@ clear:both;
 		<s:if test="massage != null">
 		<h3><s:property value="massage"/></h3>
 		</s:if>
+		<s:if test="#session.id != 'loginComplete'">
 			<s:form action="ShopLoginAction">
 				<s:textfield name="shopLoginId" label="ShopID" />
 				<s:password name="shopLoginPassword" label="Shopパスワード"/>
 				<s:submit value="ログイン" />
 			</s:form>
+		</s:if>
+		<s:else>
+			<h1>購入者IDでログイン済みです</h1>
+			<h1>ログアウトしてから店舗IDでログインしてください</h1>
+			前の画面に戻るには<a href="<s:url action='GoHomeAction' />">こちら</a>
+		</s:else>
+
 		</div>
 	</div>
 	<div id="footer">

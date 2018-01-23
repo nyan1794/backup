@@ -1,0 +1,39 @@
+package com.internousdev.ecsite.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ShopItemUpdateComfirmAction extends ActionSupport implements SessionAware{
+
+	public Map<String,Object> session;
+	private String newItemName;
+	private String newItemPrice;
+	private String addItemStock;
+
+	session.put
+
+	public String getNewItemName() {
+		return newItemName;
+	}
+	public void setNewItemName(String newItemName) {
+		this.newItemName = newItemName;
+	}
+	public String getNewItemPrice() {
+		return newItemPrice;
+	}
+	public void setNewItemPrice(String newItemPrice) {
+		this.newItemPrice = newItemPrice;
+	}
+	public String getAddItemStock() {
+		return addItemStock;
+	}
+	public void setAddItemStock(String addItemStock) {
+		this.addItemStock = addItemStock;
+	}
+	public void setSession(Map<String,Object> session){
+		this.session=session;
+	}
+}

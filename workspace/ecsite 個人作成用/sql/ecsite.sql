@@ -9,6 +9,7 @@ create table login_user_transaction(
 id int not null primary key auto_increment,
 login_id varchar(16) unique,
 login_pass varchar(16),
+email varchar(255),
 user_name varchar(50),
 insert_date datetime,
 updated_date datetime
@@ -56,4 +57,4 @@ INSERT INTO shop_login_transaction(shop_id, shop_pass, shop_name) VALUES("1","1"
 INSERT INTO item_info_transaction(item_name, item_price, item_stock,shop_name,insert_date) VALUES("NoteBook", 100, 50,"Internous","2018-01-01 00:00:00");
 INSERT INTO item_info_transaction(item_name, item_price, item_stock,shop_name,insert_date) VALUES("MacBook", 500, 50,"Internous","2018-01-01 00:00:00");
 INSERT INTO item_info_transaction(item_name, item_price, item_stock,shop_name,insert_date) VALUES("TextBook", 250, 50,"Internous","2018-01-01 00:00:00");
-INSERT INTO login_user_transaction(login_id, login_pass, user_name) VALUES("internous", "internous01", "test");
+INSERT INTO login_user_transaction(login_id, login_pass, user_name) VALUES("1", "1", "test");

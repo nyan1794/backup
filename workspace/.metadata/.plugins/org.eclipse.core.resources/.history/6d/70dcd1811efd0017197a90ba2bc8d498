@@ -1,0 +1,26 @@
+package com.internousdev.ecsite.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+import org.simplejavamail.email.Email;
+import org.simplejavamail.mailer.Mailer;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UserCreateEmailAction extends ActionSupport implements SessionAware{
+	public Map<String,Object> session;
+	public String execute(){
+		Email email = new Email();
+		email.setFromAddress("kikutaro_from", "nyandy1794@gmail.com");
+		email.addToRecipients("kikutaro_to", "nyanapple1794@gmail.com");
+		email.setSubject("サブジェクトだよ");
+		email.setText("マルチパートのテキストだよ");
+		email.setTextHTML("<b>マルチパートのHTMLだよ</b>");
+		new Mailer("smtp.gmail.com",587,"nyandy1794","nanken1794").sendMail(email);
+	}
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session=session;
+	}
+}

@@ -1,0 +1,22 @@
+package com.internousdev.ecsite.action;
+
+import java.util.Random;
+
+public class UserCreateEmailAction extends ActionSupport implements SessionAware{
+
+
+
+
+
+	public String previewOrderNum(){
+		Random rand=new Random();
+		int[] orderIntArray= new int[6];
+		String[] orderStringArray = new String[6];
+		String orderNumPreview="";
+		for(int i=0 ; orderStringArray.length>i;i++){
+			orderIntArray[i]=rand.nextInt(10);
+			orderStringArray[i]=String.valueOf(orderIntArray[i]);
+			orderNumPreview=orderNumPreview+orderStringArray[i];
+		}
+	}
+}

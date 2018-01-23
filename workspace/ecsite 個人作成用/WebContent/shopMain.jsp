@@ -7,7 +7,7 @@
 		<meta http-equiv="Content-Style-Type" content="text/css" />
 		<meta http-equiv="Content-Script-Type" content="text/javascript" />
 		<meta http-equiv="imagetoolbar" content="no" />
-		<meta name="discription" content="" />
+		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 
 		<style type="text/css">
@@ -39,7 +39,7 @@
 		}
 		#main{
 		width:100%;
-		height:500px;
+		height:1000px;
 		text-align:center;
 		}
 		#footer{
@@ -47,6 +47,9 @@
 		height:80px;
 		background-color:black;
 		clear:both;
+		}
+		#tips{
+		font-size:9px;
 		}
 		</style>
 	</head>
@@ -60,6 +63,9 @@
 				<p>店舗商品管理画面</p>
 			</div>
 			<div>
+				<s:if test="errorMassage != null">
+					<h1><s:property value="errorMassage"/></h1>
+				</s:if>
 				<table border="1">
 					<tr>
 						<th>ストア内商品id</th>
@@ -67,20 +73,58 @@
 						<th>値段</th>
 						<th>在庫数</th>
 						<th>販売日</th>
-						<th>情報更新日</th>
+						<th>最終情報更新日</th>
+						<th>変更</th>
 					</tr>
 					<s:iterator value="#session.shopSellItemList">
 					<tr>
 						<td><s:property value="id" /></td>
 						<td><s:property value="itemName" /></td>
-						<td><s:property value="itemPrice" /></td>
-						<td><s:property value="itemStock" /></td>
+						<td><s:property value="itemPrice" />円</td>
+						<td><s:property value="itemStock" />個</td>
 						<td><s:property value="insertDate" /></td>
 						<td><s:property value="updateDate" /></td>
-
+						<td>
+							<s:form action="ShopItemUpdateAction">
+								<input type="hidden" name="id" value="<s:property value='id'/>">
+								<s:submit value="変更" />
+							</s:form>
+						</td>
 					</tr>
+					<s:if test="id == #session.updateId">
+						<s:form action="ShopItemUpdateConfirmAction" theme="simple">
+							<tr>
+								<td>商品情報変更欄</td>
+								<td>
+									<s:textfield name="newItemName" value="%{itemName}" escape="true"/>
+									<input type="hidden" name="oldItemName" value="<s:property value='itemName'/>">
+								</td>
+								<td>
+									<s:textfield name="newItemPrice" value="%{itemPrice}"/>円
+									<input type="hidden" name="oldItemPrice" value="<s:property value='itemPrice' />">
+								</td>
+								<td>
+									<s:textfield name="addItemStock" value="0"/>個
+									<input type="hidden" name="oldItemStock" value="<s:property value='itemStock' />">
+								</td>
+								<td><s:property value="insertDate" /></td>
+								<td><s:property value="updateDate" /></td>
+								<td><s:submit value="変更送信" /></td>
+							</tr>
+							<tr id="tips">
+								<td>変更説明</td>
+								<td>商品名を入力してください。変更がない場合はそのままにしてください</td>
+								<td>値段を入力してください。変更がない場合はそのままにしてください</td>
+								<td>入荷する在庫数を入力してください。変更がない場合はそのままにしてください</td>
+								<td></td>
+								<td></td>
+								<td>入力後ここをクリックしてください</td>
+							</tr>
+						</s:form>
+					</s:if>
 					</s:iterator>
 				</table>
+
 				<div>
 					商品登録は<a href="<s:url action='ItemAddPageAction' />">こちら</a>
 					ログアウトは<a href="<s:url action='ShopLogoutAction'/>">こちら</a>

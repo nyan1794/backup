@@ -20,17 +20,29 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 
 	private String errorMassage;
 
+	private String insertRandNum;
+
+	private String emailMassage;
+
+
+
 	private UserCreateCompleteDAO userCreateCompleteDAO = new UserCreateCompleteDAO();
 
 	public String execute() throws SQLException {
-		String result = ERROR;
+		String result= LOGIN;
+		emailMassage="認証コードが間違っています";
+		if(session.get("RandNum").toString().equals(insertRandNum)){
+			result=ERROR;
+			emailMassage="";
 		if(userCreateCompleteDAO.cerateUser(session.get("loginUserId").toString(),
 				session.get("loginPassword").toString(),
+				session.get("email").toString(),
 				session.get("userName").toString())!=0){
 
 		result = SUCCESS;
 		}else{
 		setErrorMassage("このユーザーIDは既に使われています。");
+		}
 		}
 		return result ;
 	}
@@ -68,8 +80,24 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 		this.errorMassage = errorMassage;
 	}
 
+	public String getInsertRandNum() {
+		return insertRandNum;
+	}
+
+	public void setInsertRandNum(String insertRandNum) {
+		this.insertRandNum = insertRandNum;
+	}
+
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+
+	public String getEmailMassage() {
+		return emailMassage;
+	}
+
+	public void setEmailMassage(String emailMassage) {
+		this.emailMassage = emailMassage;
 	}
 }

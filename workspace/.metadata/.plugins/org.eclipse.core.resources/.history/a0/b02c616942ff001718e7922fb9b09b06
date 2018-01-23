@@ -1,0 +1,33 @@
+package com.internousdev.ecsite.action;
+
+import java.util.Random;
+
+import javax.mail.Session;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ecsite.util.MailSend;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UserCreateEmailAction extends ActionSupport implements SessionAware{
+	public Map<String ,Object> session;
+
+	public String execute(){
+	MailSend mailSend = new MailSend();
+	mailSend.send(RandMessage, mailAddress, userName);
+
+
+	}
+	public String previewOrderNum(){
+		Random rand=new Random();
+		int[] orderIntArray= new int[6];
+		String[] orderStringArray = new String[6];
+		String orderNumPreview="";
+		for(int i=0 ; orderStringArray.length>i;i++){
+			orderIntArray[i]=rand.nextInt(10);
+			orderStringArray[i]=String.valueOf(orderIntArray[i]);
+			orderNumPreview=orderNumPreview+orderStringArray[i];
+		}
+		return orderNumPreview;
+	}
+}
