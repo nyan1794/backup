@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<item value="0" key="CallHierarchyViewPart.call_mode"/>
 	<item value="2" key="CallHierarchyViewPart.field_mode"/>
-	<item value="/Users/kentananri/backup/workspace/HelloServlet/WebContent/WEB-INF/lib" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="/Users/kentananri/backup/workspace/ecsite 個人作成用/WebContent/WEB-INF/lib" key="org.eclipse.jdt.ui.lastextjar"/>
 	<item value="3" key="CallHierarchyViewPart.orientation"/>
 	<item value="500" key="CallHierarchyViewPart.ratio1"/>
 	<item value="1" key="SearchScopeActionGroup.search_scope_type"/>
@@ -13,7 +13,7 @@
 		<item value="false" key="renameSubpackages"/>
 		<item value="false" key="updateQualifiedNames"/>
 		<item value="*" key="patterns"/>
-		<item value="false" key="updateSimilarElements"/>
+		<item value="true" key="updateSimilarElements"/>
 		<item value="false" key="updateTextualMatches"/>
 		<item value="1" key="updateSimilarElementsMatchStrategy"/>
 	</section>
@@ -51,7 +51,7 @@
 		<item value="516" key="DIALOG_WIDTH"/>
 		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText" key="DIALOG_FONT_NAME"/>
 		<item value="644" key="DIALOG_HEIGHT"/>
-		<item value="257" key="DIALOG_X_ORIGIN"/>
+		<item value="27" key="DIALOG_X_ORIGIN"/>
 		<item value="50" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="CallHierarchySearchScope">
@@ -67,9 +67,13 @@
 		<item value="false" key="SynchronizedModifier"/>
 		<item value="false" key="Blocks"/>
 		<item value="false" key="Comments"/>
+		<item value="2" key="InsertPosition.v2"/>
 		<item value="1" key="VisibilityModifier"/>
 		<item value="false" key="InstanceOf"/>
 		<item value="false" key="FinalModifier"/>
+	</section>
+	<section name="ClasspathContainerSelectionPage">
+		<item value="2" key="index"/>
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>

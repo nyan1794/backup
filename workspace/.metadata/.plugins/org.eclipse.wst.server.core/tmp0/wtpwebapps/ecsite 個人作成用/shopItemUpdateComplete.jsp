@@ -63,7 +63,7 @@
 				<s:property value="session.newStock" />個
 			</div>
 			<div>
-				店舗管理画面に移動するには<a href="<s:url action='GoShopMainAction' />">こちら</a>
+				店舗管理画面に移動するには<a href="<s:url action='GoShopMainFromUpdateAction' />">こちら</a>
 			</div>
 		</div>
 		<div id="footer">

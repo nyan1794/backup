@@ -76,7 +76,7 @@
 		<div>
 			<h3>登録する内容は以下でよろしいですか。</h3>
 			<table>
-				<s:form action="UserCreateEmailAction">
+				<s:form action="UserCreateEmailAction" theme="simple">
 					<tr id="box">
 						<td>
 							<label>ログインID:</label>
@@ -109,6 +109,66 @@
 							<s:property value="email" escape="false" />
 						</td>
 					</tr>
+					<tr id="box">
+						<td>
+							<label>郵便番号:</label>
+						</td>
+						<td>
+							<s:property value="zipcode1" escape="false" />-<s:property value="zipcode2" escape="false" />
+						</td>
+					</tr>
+					<tr id="box">
+						<td>
+							<label>都道府県:</label>
+						</td>
+						<td>
+							<s:property value="prefecture" escape="false" />
+						</td>
+					</tr>
+					<tr id="box">
+						<td>
+							<label>市区町村:</label>
+						</td>
+						<td>
+							<s:property value="city" escape="false" />
+						</td>
+					</tr>
+					<tr id="box">
+						<td>
+							<label>番地:</label>
+						</td>
+						<td>
+							<s:property value="address" escape="false" />
+						</td>
+					</tr>
+					<s:if test="session.building != 'noBuilding'">
+					<tr>
+						<td>
+							<label>建物名:</label>
+						</td>
+						<td>
+							<s:property value="building" escape="false" />
+						</td>
+					</tr>
+					</s:if>
+					<s:if test="session.creditNum != 'no'">
+					<tr>
+						<td>
+							<label>クレジットカード番号</label>
+						</td>
+						<td>
+							<s:property value="creditNum" escape="false" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>カード有効期限</label>
+						</td>
+						<td>
+							<s:property value="creditMon" escape="false"/>月<s:property value="creditYear" escape="false" />年
+						</td>
+					</tr>
+					</s:if>
 					<tr>
 						<td>
 							<s:submit value="完了" />

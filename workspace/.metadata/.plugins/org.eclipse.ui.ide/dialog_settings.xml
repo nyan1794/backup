@@ -15,6 +15,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/kentananri/backup/workspace/Servers"/>
 			<item value="/Users/kentananri/backup/workspace/JavaSE-1.8"/>
 			<item value="/Users/kentananri/backup/workspace/ecsite 個人作成用"/>
 			<item value="/Users/kentananri/backup/workspace/template 比較用"/>

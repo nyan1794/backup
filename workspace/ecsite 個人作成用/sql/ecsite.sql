@@ -11,6 +11,13 @@ login_id varchar(16) unique,
 login_pass varchar(16),
 email varchar(255),
 user_name varchar(50),
+zipcode varchar(10),
+prefecture varchar(10),
+city varchar(100),
+address varchar(100),
+building varchar(200),
+credit_num varchar(16),
+credit_date varchar(10),
 insert_date datetime,
 updated_date datetime
 );

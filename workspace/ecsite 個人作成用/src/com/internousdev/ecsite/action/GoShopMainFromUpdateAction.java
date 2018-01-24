@@ -16,13 +16,14 @@ public class GoShopMainFromUpdateAction extends ActionSupport implements Session
 	private List<ShopSellItemDTO> shopSellItemList=new ArrayList<ShopSellItemDTO>();
 
 	public String execute() throws SQLException{
+		session.remove("newItemName");
+		session.remove("newItemPrice");
+		session.remove("newStock");
+		session.remove("addItemStock");
 		session.remove("oldItemName");
 		session.remove("oldItemPrice");
 		session.remove("oldItemStock");
-		session.remove("newItemName");
-		session.remove("newStock");
-		session.remove("newItemStock");
-		session.remove("addItemStock");
+		session.remove("updateId");
 		ShopLoginDAO shopLoginDAO=new ShopLoginDAO();
 		shopSellItemList=shopLoginDAO.getShopItemInfo(session.get("shopName").toString());
 		session.put("shopSellItemList",shopSellItemList);

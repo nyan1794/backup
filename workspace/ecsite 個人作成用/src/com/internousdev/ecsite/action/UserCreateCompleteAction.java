@@ -34,10 +34,19 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 		if(session.get("RandNum").toString().equals(insertRandNum)){
 			result=ERROR;
 			emailMassage="";
-		if(userCreateCompleteDAO.cerateUser(session.get("loginUserId").toString(),
+		if(userCreateCompleteDAO.cerateUser(
+				session.get("loginUserId").toString(),
 				session.get("loginPassword").toString(),
 				session.get("email").toString(),
-				session.get("userName").toString())!=0){
+				session.get("userName").toString(),
+				session.get("zipcode").toString(),
+				session.get("prefecture").toString(),
+				session.get("city").toString(),
+				session.get("address").toString(),
+				session.get("building").toString(),
+				session.get("creditNum").toString(),
+				session.get("creditDate").toString()
+				)!=0){
 
 		result = SUCCESS;
 		}else{

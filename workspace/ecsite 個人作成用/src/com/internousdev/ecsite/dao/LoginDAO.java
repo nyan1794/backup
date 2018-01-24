@@ -37,6 +37,14 @@ public class LoginDAO {
 				loginDTO.setLoginId(resultSet.getString("login_id"));
 				loginDTO.setLoginPassword(resultSet.getString("login_pass"));
 				loginDTO.setUserName(resultSet.getString("user_name"));
+				loginDTO.setUserEmail(resultSet.getString("email"));
+				loginDTO.setUserZipcode(resultSet.getString("zipcode"));
+				loginDTO.setUserPrefecture(resultSet.getString("prefecture"));
+				loginDTO.setUserCity(resultSet.getString("city"));
+				loginDTO.setUserAddress(resultSet.getString("address"));
+				loginDTO.setUserBuilding(resultSet.getString("building"));
+				loginDTO.setUserCreditNum(resultSet.getString("credit_num"));
+				loginDTO.setUserCreditDate(resultSet.getString("credit_date"));
 
 				if(!(resultSet.getString("login_id").equals(null))) {
 					loginDTO.setLoginFlg(true);

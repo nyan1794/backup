@@ -1,0 +1,12 @@
+package com.internousdev.ecsite.action;
+
+import java.util.Map;
+
+public class UserInfoAction extends ActionSupport implements SessionAware{
+	public Map<String,Object> session;
+	public String execute(){
+
+		session.get("loginUser")
+	}
+
+}

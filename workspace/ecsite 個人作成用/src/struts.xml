@@ -130,5 +130,14 @@
 		<action name="GoShopMainFromUpdateAction" class="com.internousdev.ecsite.action.GoShopMainFromUpdateAction" method="execute">
 			<result name="success">shopMain.jsp</result>
 		</action>
+
+		<!-- ユーザ確認更新画面 -->
+		<action name="UserInfoAction" class="com.internousdev.ecsite.action.UserInfoAction" method="execute">
+			<result name="success">userInfo.jsp</result>
+		</action>
+
+		<action name="UserInfoUpdateAction" class="com.internousdev.ecsite.action.UserInfoUpdateAction" method="execute">
+			<result name="success">userInfoUpdate.jsp</result>
+		</action>
 	</package>
 </struts>

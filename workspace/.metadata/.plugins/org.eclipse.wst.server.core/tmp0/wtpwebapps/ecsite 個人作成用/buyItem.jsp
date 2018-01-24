@@ -112,6 +112,7 @@
 			<div>
 				<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
 				<p>マイぺージは<a href='<s:url action="MyPageAction" />'>こちら</a></p>
+				<p>ユーザー情報の確認、変更は<a href="<s:url action='UserInfoAction' />" >こちら</a>
 			</div>
 		</div>
 	</div>
