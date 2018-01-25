@@ -1,8 +1,0 @@
-package com.internousdev.ecsite.action;
-
-public class ShopLoginAction extends ActionSupport implements SessionAware{
-	private String ownerLoginId;
-	private String ownerLoginPassword;
-
-
-}

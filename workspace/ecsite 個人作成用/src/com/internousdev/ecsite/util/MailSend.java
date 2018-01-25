@@ -23,7 +23,7 @@ public class MailSend {
 
 	//ここからメール送付に必要なSMTP,SSL認証などの設定
 
-	    public void send(String RandMessage,String mailAddress,String userName){
+	    public void send(String RandMessage,String mailAddress,String userName ,String title){
 	        final Properties props = new Properties();
 
 	        // SMTPサーバーの設定。ここではgooglemailのsmtpサーバーを設定。
@@ -65,7 +65,7 @@ public class MailSend {
 	            message.addRecipient(Message.RecipientType.TO, addrTo);
 
 	            // メールのSubject
-	            message.setSubject("ユーザー登録メール認証", ENCODE);
+	            message.setSubject(title, ENCODE);
 
 	            // メール本文。
 	            message.setText("あなたの認証コードは"+RandMessage+"です。", ENCODE);

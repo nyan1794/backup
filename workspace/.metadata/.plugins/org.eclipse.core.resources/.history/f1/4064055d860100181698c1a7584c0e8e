@@ -1,0 +1,176 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<title>ユーザー情報変更画面</title>
+<style type="text/css">
+body{
+margin:0;
+padding:0;
+line-height:1.6;
+letter-spacing:1px;
+font-family:Verdana,Helvetiva,sans-serif;
+font-size:12px;
+color:#333;
+background:#fff;
+}
+table{
+margin:0 auto;
+text-align:center;
+}
+
+#top{
+width:780px;
+margin:30px auto;
+border:1px solid #333;
+}
+#header{
+width:100%;
+height:80px;
+background-color:black;
+}
+#main{
+width:100%;
+height:500px;
+text-align:center;
+}
+#footer{
+width:100%;
+height:80px;
+background-color:black;
+clear:both;
+}
+#big{
+font-size:20px;
+}
+</style>
+</head>
+<body>
+	<div id="header">
+	</div>
+	<div id="main">
+		<div id="pr">
+		</div>
+		<div>
+			<s:form action="UserInfoUpdateConfirmAction" theme="simple">
+				<table>
+					<tr>
+						<th></th>
+						<th>変更前</th>
+						<th id="big">→</th>
+						<th>変更後</th>
+					</tr>
+					<tr>
+						<td>ユーザー名</td>
+						<td><s:property value="#session.userName" /></td>
+						<td>→</td>
+						<td><s:property value="#session.newUserName" /></td>
+					</tr>
+					<tr>
+						<td>ID</td>
+						<td><s:property value="#session.loginId" /></td>
+						<td>→</td>
+						<td><s:property value="#session.newLoginId" /></td>
+					</tr>
+					<tr>
+						<td>パスワード</td>
+						<td><s:property value="#session.loginPassword" /></td>
+						<td>→</td>
+						<td><s:property value="#session.newLoginPassword" /></td>
+					</tr>
+					<tr>
+						<td>メールアドレス</td>
+						<td><s:property value="#session.userEmail" /></td>
+						<td>→</td>
+						<td><s:property value="#session.newUserEmail" /></td>
+					</tr>
+					<tr>
+						<td>郵便番号</td>
+						<td><s:property value="#session.userZipcode" /></td>
+						<td>→</td>
+						<td><s:property value="#session.newUserZipcode" /></td>
+					</tr>
+					<tr>
+						<td>都道府県</td>
+						<td><s:property value="#session.userPrefecture" /></td>
+						<td>→</td>
+						<td><s:property value="#session.newUserPrefecture" /></td>
+					</tr>
+					<tr>
+						<td>市区町村</td>
+						<td><s:property value="#session.userCity" /></td>
+						<td>→</td>
+						<td><s:property value="#session.newUserCity" /></td>
+					</tr>
+					<tr>
+						<td>番地</td>
+						<td><s:property value="#session.userAddress" /></td>
+						<td>→</td>
+						<td><s:property value="#session.newUserAddress" /></td>
+					</tr>
+					<s:if test="#session.newUserBuilding != 'noBuilding'">
+					<tr>
+						<td>建物名</td>
+						<s:if test="#session.userBuilding != 'noBuilding'" >
+						<td><s:property value="#session.userBuilding" /></td>
+						</s:if>
+						<s:else>
+							<td>登録建物名なし</td>
+						</s:else>
+						<td>→</td>
+						<td><s:property value="#session.newUserBuilding" /></td>
+					</tr>
+					</s:if>
+					<s:else>
+					<tr>
+						<td>*建物名</td>
+						<s:if test="#session.userBuilding != 'noBuilding'" >
+						<td><s:property value="#session.userBuilding" /></td>
+						</s:if>
+						<s:else>
+							<td>登録建物名なし</td>
+						</s:else>
+						<td>→</td>
+						<td>登録建物名なし</td>
+					</tr>
+					</s:else>
+					<s:if test="#session.userCreditNum != 'no'">
+					<tr>
+						<td>クレジットカード番号</td>
+						<td><s:property value="#session.userCreditNum" /></td>
+						<td>→</td>
+						<td><s:property value="#session.newUserCreditNum"/></td>
+					</tr>
+					<tr>
+						<td>カード有効期限</td>
+						<td><s:property value="#session.userCreditDate" /></td>
+						<td>→</td>
+						<td><s:property value="#session.newUserCreditDate" /></td>
+					</tr>
+					</s:if>
+					<s:elseif>
+					<tr>
+						<td>*クレジットカード番号</td>
+						<td>クレジットカード情報無し</td>
+						<td>→</td>
+						<td><s:textfield name="newUserCreditNum" value="" /></td>
+					</tr>
+					<tr>
+						<td>*カード有効期限</td>
+						<td>クレジットカード情報無し</td>
+						<td>→</td>
+						<td><s:textfield name="newUserCreditMon" value=""/>月<s:textfield name="newUserCreditYear" value="" /></td>
+					</tr>
+					</s:elseif>
+				</table>
+			</s:form>
+		</div>
+	</div>
+	<div id="footer">
+	</div>
+</body>
+</html>

@@ -64,4 +64,5 @@ INSERT INTO shop_login_transaction(shop_id, shop_pass, shop_name) VALUES("1","1"
 INSERT INTO item_info_transaction(item_name, item_price, item_stock,shop_name,insert_date) VALUES("NoteBook", 100, 50,"Internous","2018-01-01 00:00:00");
 INSERT INTO item_info_transaction(item_name, item_price, item_stock,shop_name,insert_date) VALUES("MacBook", 500, 50,"Internous","2018-01-01 00:00:00");
 INSERT INTO item_info_transaction(item_name, item_price, item_stock,shop_name,insert_date) VALUES("TextBook", 250, 50,"Internous","2018-01-01 00:00:00");
-INSERT INTO login_user_transaction(login_id, login_pass, user_name) VALUES("1", "1", "test");
+INSERT INTO login_user_transaction(login_id, login_pass, user_name,email,zipcode,prefecture,city,address,building,credit_num,credit_date) VALUES("1", "1", "test","nyandy1794@gmail.com","400-0115","山梨県","甲斐市篠原","118-10","サンコート豊島園","1234567812345678","02月2022年");
+INSERT INTO login_user_transaction(login_id, login_pass, user_name,email,zipcode,prefecture,city,address,building,credit_num,credit_date) VALUES("2", "2", "test","nyanapple1794@gmail.com","176-0022","東京都","練馬区向山","2-28-17","noBuilding","no","no");

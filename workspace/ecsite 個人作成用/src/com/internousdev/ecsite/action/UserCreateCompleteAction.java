@@ -47,8 +47,8 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 				session.get("creditNum").toString(),
 				session.get("creditDate").toString()
 				)!=0){
-
-		result = SUCCESS;
+					session.clear();
+					result = SUCCESS;
 		}else{
 		setErrorMassage("このユーザーIDは既に使われています。");
 		}

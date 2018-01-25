@@ -62,6 +62,9 @@
 <body>
 	<div id="header">
 	 	<div id="pr">
+	 	<s:form action="BuyItemSerchAction">
+	 		<s:textfield name="itemSearch"/>
+	 	</s:form>
 		</div>
 	</div>
 	<div id="main">

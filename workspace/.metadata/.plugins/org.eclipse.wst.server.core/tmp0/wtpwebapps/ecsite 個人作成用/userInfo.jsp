@@ -140,6 +140,9 @@ body {
 				<s:submit value="ユーザー情報の変更はこちらのボタン" />
 			</s:form>
 		</div>
+		<div>
+			商品購入画面に戻る場合は<a href="<s:url action='GoBuyItemFromUserInfoAction'/>">こちら</a>
+		</div>
 	</div>
 
 </body>

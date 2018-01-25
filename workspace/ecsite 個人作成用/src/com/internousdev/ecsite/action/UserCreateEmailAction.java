@@ -16,7 +16,8 @@ public class UserCreateEmailAction extends ActionSupport implements SessionAware
 	String userName=session.get("userName").toString();
 	String mailAddress=session.get("email").toString();
 	String RandMessage=RandNum();
-	mailSend.send(RandMessage, mailAddress, userName);
+	String title="ユーザ登録認証メール";
+	mailSend.send(RandMessage, mailAddress, userName,title);
 	session.put("RandNum", RandMessage);
 
 

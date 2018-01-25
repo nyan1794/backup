@@ -23,9 +23,88 @@ public class UserInfoUpdateConfirmAction extends ActionSupport implements Sessio
 	private String newUserCreditDate;
 
 	public Map<String,Object> session;
+	private String regexError=null;
+	private String ErrorMassage=null;
+	private String creditError;
 	public String execute(){
-		if()
+		String result= ERROR;
+		if(!(newLoginId.matches("^[0-9a-zA-Z]{1,20}"))){
+			setRegexError("ログインIDは半角英数字で２０文字以内で入力してください");
+			return ERROR;
+		}
+		if(!(newLoginPassword.matches("^[0-9a-zA-Z]{1,20}"))){
+			setRegexError("ログインパスワードは半角英数字で２０文字以内で入力してください");
+			return ERROR;
+		}
+		if(!(newUserZipcode1.matches("^[0-9]{3}"))){
+			setRegexError("郵便番号は半角英数字で１つ目に３文字、２つ目に４文字で入力してください");
+			return ERROR;
+		}
+		if(!(newUserZipcode2.matches("^[0-9]{4}"))){
+			setRegexError("郵便番号は半角英数字で１つ目に３文字、２つ目に４文字で入力してください");
+			return ERROR;
+		}
 
+		if(!(newUserEmail.matches("^.*@.*"))){
+			setRegexError("メールアドレスの形式が間違っています");
+			return ERROR;
+		}
+		if(!(newUserCreditNum.equals(""))){
+			if(!(newUserCreditNum.matches("^[0-9]{16}"))){
+				setRegexError("カード番号は半角英数字16文字で入力してください");
+				return ERROR;
+			}
+			if(!(newUserCreditMon.matches("^[0-9]{2}"))){
+				setRegexError("カード有効期限の月は2桁で入力してください 例:02");
+				return ERROR;
+			}
+			if(!(newUserCreditYear.matches("^[0-9]{4}"))){
+				setRegexError("カード有効期限の年は西暦で4桁で入力してください 例:2020");
+				return ERROR;
+			}
+		}
+		if(newUserPrefecture.equals("%{#session.userPrefecture}")){
+			newUserPrefecture=session.get("userPrefecture").toString();
+		}
+
+		if(!(newLoginId.equals("")) && !(newLoginPassword.equals("")) && !(newUserName.equals("")) && !(newUserEmail.equals(""))
+				&& !(newUserZipcode1.equals("")) && !(newUserZipcode2.equals("")) && !(newUserCity.equals("")) && !(newUserAddress.equals(""))) {
+			session.put("newLoginId", newLoginId);
+			session.put("newLoginPassword", newLoginPassword);
+			session.put("newUserName", newUserName);
+			session.put("newUserEmail",newUserEmail);
+			session.put("newUserZipcode",newUserZipcode1+"-"+newUserZipcode2);
+
+
+			session.put("newUserPrefecture", newUserPrefecture);
+			session.put("newUserCity", newUserCity);
+			session.put("newUserAddress",newUserAddress);
+			session.put("newUserBuilding","noBuilding");
+			session.put("newUserCreditNum","no");
+			session.put("newUserCreditDate","no");
+			result=SUCCESS;
+			if(!(newUserBuilding.equals(""))){
+				session.put("newUserBuilding",newUserBuilding);
+			}
+			if(!(newUserCreditNum.equals(""))){
+				result=ERROR;
+				setCreditError("カード情報を確認してください");
+				if(!(newUserCreditMon.equals(""))){
+					result=ERROR;
+					if(!(newUserCreditYear.equals(""))){
+						result=SUCCESS;
+						session.put("newUserCreditNum", newUserCreditNum);
+						session.put("newUserCreditDate",newUserCreditMon+"月"+newUserCreditYear+"年");
+						setCreditError(null);
+					}
+				}
+			}
+		} else {
+
+			setErrorMassage("未入力の項目があります。");
+			result = ERROR;
+		}
+		return result;
 	}
 
 
@@ -121,5 +200,35 @@ public class UserInfoUpdateConfirmAction extends ActionSupport implements Sessio
 	}
 	public void setNewUserCreditDate(String newUserCreditDate) {
 		this.newUserCreditDate = newUserCreditDate;
+	}
+
+
+	public String getRegexError() {
+		return regexError;
+	}
+
+
+	public void setRegexError(String regexError) {
+		this.regexError = regexError;
+	}
+
+
+	public String getErrorMassage() {
+		return ErrorMassage;
+	}
+
+
+	public void setErrorMassage(String errorMassage) {
+		ErrorMassage = errorMassage;
+	}
+
+
+	public String getCreditError() {
+		return creditError;
+	}
+
+
+	public void setCreditError(String creditError) {
+		this.creditError = creditError;
 	}
 }

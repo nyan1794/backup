@@ -139,5 +139,21 @@
 		<action name="UserInfoUpdateAction" class="com.internousdev.ecsite.action.UserInfoUpdateAction" method="execute">
 			<result name="success">userInfoUpdate.jsp</result>
 		</action>
+
+		<action name="UserInfoUpdateConfirmAction" class="com.internousdev.ecsite.action.UserInfoUpdateConfirmAction" method="execute">
+			<result name="success">userInfoUpdateConfirm.jsp</result>
+			<result name="error">userInfoUpdate.jsp</result>
+		</action>
+		<action name="UserInfoUpdateEmailAction" class="com.internousdev.ecsite.action.UserInfoUpdateEmailAction" method="execute">
+			<result name="success">userInfoUpdateEmail.jsp</result>
+		</action>
+		<action name="UserInfoUpdateCompleteAction" class="com.internousdev.ecsite.action.UserInfoUpdateCompleteAction" method="execute">
+			<result name="success">userInfoUpdateComplete.jsp</result>
+			<result name="error">userInfoUpdate.jsp</result>
+			<result name="login">userInfoUpdateEmail.jsp</result>
+		</action>
+		<action name="GoBuyItemFromUserInfoAction" class="com.internousdev.ecsite.action.GoBuyItemFromUserInfoAction" method="execute">
+			<result name="success">buyItem.jsp</result>
+		</action>
 	</package>
 </struts>

@@ -57,6 +57,15 @@ font-size:20px;
 		</div>
 		<div>
 			<s:form action="UserInfoUpdateConfirmAction" theme="simple">
+				<s:if test="regexError != null">
+				<h1><s:property value="regexError" /></h1>
+				</s:if>
+				<s:if test="creditError != null">
+				<h1><s:property value="creditError" /></h1>
+				</s:if>
+				<s:if test="errorMassage != null">
+				<h1><s:property value="errorMassage" /></h1>
+				</s:if>
 				<table>
 					<tr>
 						<th></th>
@@ -174,7 +183,7 @@ font-size:20px;
 					<s:else>
 					<tr>
 						<td>*建物名</td>
-						<td>登録建物名なし<td>
+						<td>登録建物名なし</td>
 						<td>→</td>
 						<td><s:textfield name="newUserBuilding" value="" /></td>
 					</tr>
@@ -195,13 +204,13 @@ font-size:20px;
 					</s:if>
 					<s:else>
 					<tr>
-						<td>クレジットカード番号</td>
+						<td>*クレジットカード番号</td>
 						<td>クレジットカード情報無し</td>
 						<td>→</td>
 						<td><s:textfield name="newUserCreditNum" value="" /></td>
 					</tr>
 					<tr>
-						<td>カード有効期限</td>
+						<td>*カード有効期限</td>
 						<td>クレジットカード情報無し</td>
 						<td>→</td>
 						<td><s:textfield name="newUserCreditMon" value=""/>月<s:textfield name="newUserCreditYear" value="" /></td>
@@ -216,6 +225,15 @@ font-size:20px;
 				</table>
 			</s:form>
 		</div>
+		<div>
+			*引っ越し等で建物名がある場合は入力してください。<br>
+			*クレジットカードを登録する際は入力してください
+		</div>
+		<div>
+			ユーザー情報確認画面に戻る場合はこちら<a href="<s:url action='UserInfoAction' />">こちら</a>
+		</div>
+	</div>
+	<div id="footer">
 	</div>
 </body>
 </html>

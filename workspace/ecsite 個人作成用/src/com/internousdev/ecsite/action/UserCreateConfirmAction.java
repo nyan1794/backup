@@ -41,6 +41,14 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	public String execute() {
 
 		String result = SUCCESS;
+		if(!(loginUserId.matches("^[0-9a-zA-Z]{1,20}"))){
+			setRegexError("ログインIDは半角英数字で２０文字以内で入力してください");
+			return ERROR;
+		}
+		if(!(loginPassword.matches("^[0-9a-zA-Z]{1,20}"))){
+			setRegexError("ログインパスワードは半角英数字で２０文字以内で入力してください");
+			return ERROR;
+		}
 		if(!(zipcode1.matches("^[0-9]{3}"))){
 			setRegexError("郵便番号は半角英数字で１つ目に３文字、２つ目に４文字で入力してください");
 			return ERROR;
@@ -49,29 +57,24 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 			setRegexError("郵便番号は半角英数字で１つ目に３文字、２つ目に４文字で入力してください");
 			return ERROR;
 		}
-		if(!(loginUserId.matches("^[0-9]|[a-z]|[A-Z]{1,20}"))){
-			setRegexError("ログインIDは半角小文字大文字英数字で２０文字以内で入力してください");
-			return ERROR;
-		}
-		if(!(loginPassword.matches("^[0-9]|[a-z]|[A-Z]{1,20}"))){
-			setRegexError("ログインパスワードは半角小文字大文字英数字で２０文字以内で入力してください");
-			return ERROR;
-		}
+
 		if(!(email.matches("^.*@.*"))){
 			setRegexError("メールアドレスの形式が間違っています");
 			return ERROR;
 		}
-		if(!(creditNum.matches("^[0-9]{16}"))){
-			setRegexError("カード番号は半角英数字16文字で入力してください");
-			return ERROR;
-		}
-		if(!(creditMon.matches("^[0-9]{2}"))){
-			setRegexError("カード有効期限の月は2桁で入力してください 例:02");
-			return ERROR;
-		}
-		if(!(creditYear.matches("^[0-9]{4}"))){
-			setRegexError("カード有効期限の年は西暦で4桁で入力してください 例:2020");
-			return ERROR;
+		if(!(creditNum.equals(""))){
+			if(!(creditNum.matches("^[0-9]{16}"))){
+				setRegexError("カード番号は半角英数字16文字で入力してください");
+				return ERROR;
+			}
+			if(!(creditMon.matches("^[0-9]{2}"))){
+				setRegexError("カード有効期限の月は2桁で入力してください 例:02");
+				return ERROR;
+			}
+			if(!(creditYear.matches("^[0-9]{4}"))){
+				setRegexError("カード有効期限の年は西暦で4桁で入力してください 例:2020");
+				return ERROR;
+			}
 		}
 		if(!(loginUserId.equals("")) && !(loginPassword.equals("")) && !(userName.equals("")) && !(email.equals(""))
 				&& !(zipcode1.equals("")) && !(zipcode2.equals("")) && !(city.equals("")) && !(address.equals(""))) {

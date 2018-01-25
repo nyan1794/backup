@@ -1,0 +1,227 @@
+package com.internousdev.ecsite.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UserInfoUpdateConfirmAction extends ActionSupport implements SessionAware{
+	private String newUserName;
+	private String newLoginId;
+	private String newLoginPassword;
+	private String newUserEmail;
+	private String newUserZipcode1;
+	private String newUserZipcode2;
+	private String newUserPrefecture;
+	private String newUserCity;
+	private String newUserAddress;
+	private String newUserBuilding;
+	private String newUserCreditNum;
+	private String newUserCreditMon;
+	private String newUserCreditYear;
+	private String newUserCreditDate;
+
+	public Map<String,Object> session;
+	private String regexError;
+	private String ErrorMassage;
+	private String creditError;
+	public String execute(){
+		String result= ERROR;
+		if(!(newLoginId.matches("^[0-9a-zA-Z]{1,20}"))){
+			setRegexError("ログインIDは半角英数字で２０文字以内で入力してください");
+			return ERROR;
+		}
+		if(!(newLoginPassword.matches("^[0-9a-zA-Z]{1,20}"))){
+			setRegexError("ログインパスワードは半角英数字で２０文字以内で入力してください");
+			return ERROR;
+		}
+		if(!(newUserZipcode1.matches("^[0-9]{3}"))){
+			setRegexError("郵便番号は半角英数字で１つ目に３文字、２つ目に４文字で入力してください");
+			return ERROR;
+		}
+		if(!(newUserZipcode2.matches("^[0-9]{4}"))){
+			setRegexError("郵便番号は半角英数字で１つ目に３文字、２つ目に４文字で入力してください");
+			return ERROR;
+		}
+
+		if(!(newUserEmail.matches("^.*@.*"))){
+			setRegexError("メールアドレスの形式が間違っています");
+			return ERROR;
+		}
+		if(!(newUserCreditNum.equals(""))){
+			if(!(newUserCreditNum.matches("^[0-9]{16}"))){
+				setRegexError("カード番号は半角英数字16文字で入力してください");
+				return ERROR;
+			}
+			if(!(newUserCreditMon.matches("^[0-9]{2}"))){
+				setRegexError("カード有効期限の月は2桁で入力してください 例:02");
+				return ERROR;
+			}
+			if(!(newUserCreditYear.matches("^[0-9]{4}"))){
+				setRegexError("カード有効期限の年は西暦で4桁で入力してください 例:2020");
+				return ERROR;
+			}
+		}
+		if(!(newLoginId.equals("")) && !(newLoginPassword.equals("")) && !(newUserName.equals("")) && !(newUserEmail.equals(""))
+				&& !(newUserZipcode1.equals("")) && !(newUserZipcode2.equals("")) && !(newUserCity.equals("")) && !(newUserAddress.equals(""))) {
+			session.put("loginUserId", newLoginId);
+			session.put("loginPassword", newLoginPassword);
+			session.put("userName", newUserName);
+			session.put("email",newUserEmail);
+			session.put("zipcode",newUserZipcode1+"-"+newUserZipcode2);
+			session.put("prefecture", newUserPrefecture);
+			session.put("city", newUserCity);
+			session.put("address",newUserAddress);
+			session.put("building","noBuilding");
+			session.put("creditNum","no");
+			session.put("creditDate","no");
+			if(!(newUserCreditNum.equals(""))){
+				result=ERROR;
+				setCreditError("カード情報を確認してください");
+				if(!(newUserCreditMon.equals(""))){
+					result=ERROR;
+					if(!(newUserCreditYear.equals(""))){
+						result=SUCCESS;
+						session.put("creditNum", newUserCreditNum);
+						session.put("creditDate",newUserCreditMon+"月"+newUserCreditYear+"年");
+						setCreditError(null);
+					}
+				}
+			if(!(newUserBuilding.equals(""))){
+				session.put("building",newUserBuilding);
+			}
+			}
+		} else {
+
+			setErrorMassage("未入力の項目があります。");
+			result = ERROR;
+		}
+		return result;
+	}
+
+
+	public void setSession(Map<String,Object> session){
+		this.session=session;
+	}
+
+	public String getNewUserName() {
+		return newUserName;
+	}
+	public void setNewUserName(String newUserName) {
+		this.newUserName = newUserName;
+	}
+	public String getNewLoginId() {
+		return newLoginId;
+	}
+	public void setNewLoginId(String newLoginId) {
+		this.newLoginId = newLoginId;
+	}
+	public String getNewLoginPassword() {
+		return newLoginPassword;
+	}
+	public void setNewLoginPassword(String newLoginPassword) {
+		this.newLoginPassword = newLoginPassword;
+	}
+	public String getNewUserEmail() {
+		return newUserEmail;
+	}
+	public void setNewUserEmail(String newUserEmail) {
+		this.newUserEmail = newUserEmail;
+	}
+
+	public String getNewUserZipcode1() {
+		return newUserZipcode1;
+	}
+
+	public void setNewUserZipcode1(String newUserZipcode1) {
+		this.newUserZipcode1 = newUserZipcode1;
+	}
+
+	public String getNewUserZipcode2() {
+		return newUserZipcode2;
+	}
+
+	public void setNewUserZipcode2(String newUserZipcode2) {
+		this.newUserZipcode2 = newUserZipcode2;
+	}
+
+	public String getNewUserPrefecture() {
+		return newUserPrefecture;
+	}
+	public void setNewUserPrefecture(String newUserPrefecture) {
+		this.newUserPrefecture = newUserPrefecture;
+	}
+	public String getNewUserCity() {
+		return newUserCity;
+	}
+	public void setNewUserCity(String newUserCity) {
+		this.newUserCity = newUserCity;
+	}
+	public String getNewUserAddress() {
+		return newUserAddress;
+	}
+	public void setNewUserAddress(String newUserAddress) {
+		this.newUserAddress = newUserAddress;
+	}
+	public String getNewUserBuilding() {
+		return newUserBuilding;
+	}
+	public void setNewUserBuilding(String newUserBuilding) {
+		this.newUserBuilding = newUserBuilding;
+	}
+	public String getNewUserCreditNum() {
+		return newUserCreditNum;
+	}
+	public void setNewUserCreditNum(String newUserCreditNum) {
+		this.newUserCreditNum = newUserCreditNum;
+	}
+	public String getNewUserCreditMon() {
+		return newUserCreditMon;
+	}
+	public void setNewUserCreditMon(String newUserCreditMon) {
+		this.newUserCreditMon = newUserCreditMon;
+	}
+	public String getNewUserCreditYear() {
+		return newUserCreditYear;
+	}
+	public void setNewUserCreditYear(String newUserCreditYear) {
+		this.newUserCreditYear = newUserCreditYear;
+	}
+	public String getNewUserCreditDate() {
+		return newUserCreditDate;
+	}
+	public void setNewUserCreditDate(String newUserCreditDate) {
+		this.newUserCreditDate = newUserCreditDate;
+	}
+
+
+	public String getRegexError() {
+		return regexError;
+	}
+
+
+	public void setRegexError(String regexError) {
+		this.regexError = regexError;
+	}
+
+
+	public String getErrorMassage() {
+		return ErrorMassage;
+	}
+
+
+	public void setErrorMassage(String errorMassage) {
+		ErrorMassage = errorMassage;
+	}
+
+
+	public String getCreditError() {
+		return creditError;
+	}
+
+
+	public void setCreditError(String creditError) {
+		this.creditError = creditError;
+	}
+}
