@@ -1,0 +1,87 @@
+package com.internousdev.ecsite.action;
+
+import java.sql.SQLException;
+
+import com.internousdev.ecsite.dao.ShopCreateDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ShopCreateCompleteAction extends ActionSupport{
+	private String shopName;
+	private String shopId;
+	private String shopPassword;
+	private String shopEmail;
+	private String shopCode;
+	private String randNum;
+	private String ActivationCode;
+	private String errorMassage=null;
+	private ShopCreateDAO shopCreateDAO = new ShopCreateDAO();
+
+	public String execute() throws SQLException{
+		String result;
+		if(randNum.equals(ActivationCode)){
+			int resultInt=shopCreateDAO.createShopSQL(shopId, shopPassword, shopName, shopEmail, shopCode);
+			if(resultInt>0){
+				return SUCCESS;
+			}else{
+				result="back";
+			}
+		}else{
+			errorMassage="認証コードが間違っています";
+			return ERROR;
+		}
+		return result;
+	}
+
+	public String getShopName() {
+		return shopName;
+	}
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
+	}
+	public String getShopId() {
+		return shopId;
+	}
+	public void setShopId(String shopId) {
+		this.shopId = shopId;
+	}
+	public String getShopPassword() {
+		return shopPassword;
+	}
+	public void setShopPassword(String shopPassword) {
+		this.shopPassword = shopPassword;
+	}
+	public String getShopEmail() {
+		return shopEmail;
+	}
+	public void setShopEmail(String shopEmail) {
+		this.shopEmail = shopEmail;
+	}
+	public String getShopCode() {
+		return shopCode;
+	}
+	public void setShopCode(String shopCode) {
+		this.shopCode = shopCode;
+	}
+	public String getRandNum() {
+		return randNum;
+	}
+	public void setRandNum(String randNum) {
+		this.randNum = randNum;
+	}
+
+	public String getActivationCode() {
+		return ActivationCode;
+	}
+
+	public void setActivationCode(String activationCode) {
+		ActivationCode = activationCode;
+	}
+
+	public String getErrorMassage() {
+		return errorMassage;
+	}
+
+	public void setErrorMassage(String errorMassage) {
+		this.errorMassage = errorMassage;
+	}
+}

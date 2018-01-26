@@ -4,6 +4,7 @@ public class ShopLoginDTO {
 	private String shopLoginId;
 	private String shopLoginPassword;
 	private String shopName;
+	private String shopCode;
 	private boolean shopLoginFlg;
 
 	public String getShopLoginId() {
@@ -29,6 +30,12 @@ public class ShopLoginDTO {
 	}
 	public void setShopLoginFlg(boolean shopLoginFlg) {
 		this.shopLoginFlg = shopLoginFlg;
+	}
+	public String getShopCode() {
+		return shopCode;
+	}
+	public void setShopCode(String shopCode) {
+		this.shopCode = shopCode;
 	}
 
 

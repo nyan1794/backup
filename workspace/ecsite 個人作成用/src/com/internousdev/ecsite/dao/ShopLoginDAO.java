@@ -28,6 +28,7 @@ public class ShopLoginDAO {
 				shopLoginDTO.setShopLoginId(resultSet.getString("shop_id"));
 				shopLoginDTO.setShopLoginPassword(resultSet.getString("shop_pass"));
 				shopLoginDTO.setShopName(resultSet.getString("shop_name"));
+				shopLoginDTO.setShopCode(resultSet.getString("shop_code"));
 				shopLoginDTO.setShopLoginFlg(true);
 
 			}else{

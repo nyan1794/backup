@@ -52,7 +52,8 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 				buyItemConfirmList.get(i).getCount(),
 				buyItemConfirmList.get(i).getTotalPrice(),
 				session.get("pay").toString(),
-				orderNum);
+				orderNum,
+				buyItemConfirmList.get(i).getShopName());
 		buyItemCompleteDAO.updateItemInfo((buyItemConfirmList.get(i).getItemStock() - buyItemConfirmList.get(i).getCount()),buyItemConfirmList.get(i).getId());
 		}
 		session.put("buyItemConfirmList", buyItemConfirmList);

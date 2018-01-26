@@ -10,8 +10,12 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class ItemAddCompleteAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> session;
+	private String insertShopCode;
+	private String errorMassage;
 	public String execute() throws SQLException{
+
 		String result=ERROR;
+		if(session.get("shopCode").toString().equals(insertShopCode)){
 		ItemAddDAO itemAddDAO=new ItemAddDAO();
 		String sellItemName=session.get("sellItemName").toString();
 		String sellItemPrice=session.get("sellItemPrice").toString();
@@ -20,6 +24,11 @@ public class ItemAddCompleteAction extends ActionSupport implements SessionAware
 		int addRes=itemAddDAO.addItem(sellItemName,sellItemPrice,sellItemStock,shopName);
 		if(addRes>0){
 			result=SUCCESS;
+		}
+		}else{
+			result = "back";
+			errorMassage="店舗コードが間違っています。";
+
 		}
 		return result;
 
@@ -31,5 +40,33 @@ public class ItemAddCompleteAction extends ActionSupport implements SessionAware
 
 public void setSession(Map<String,Object> session){
 	this.session=session;
+}
+
+
+
+
+public String getInsertShopCode() {
+	return insertShopCode;
+}
+
+
+
+
+public void setInsertShopCode(String insertShopCode) {
+	this.insertShopCode = insertShopCode;
+}
+
+
+
+
+public String getErrorMassage() {
+	return errorMassage;
+}
+
+
+
+
+public void setErrorMassage(String errorMassage) {
+	this.errorMassage = errorMassage;
 }
 }

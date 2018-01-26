@@ -39,9 +39,9 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	public String execute() {
 		String result = SUCCESS;
 		int totalPrice=0;
+		int j=0;
 		List<BuyItemDTO> buyItemList = (List<BuyItemDTO>)session.get("buyItemList");
 		for(int i=0; buyItemList.size() > i; i++) {
-
 			int intPrice = buyItemList.get(i).getItemPrice();
 			int intCount = count.get(i);
 
@@ -49,11 +49,6 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 			buyItemList.get(i).setItemTotalPrice(intCount * intPrice);
 			int price=buyItemList.get(i).getItemTotalPrice();
 			totalPrice+=price;
-
-
-		}
-		int j=0;
-		for(int i=0;buyItemList.size()>i;i++){
 			buyItemList.get(i).setTotalPrice(totalPrice);
 			int itemcount = buyItemList.get(i).getCount();
 			if(!(itemcount == 0)){

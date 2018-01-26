@@ -1,0 +1,57 @@
+package com.internousdev.ecsite.action;
+
+public class ShopCreateEmailAction extends ActionSupport{
+	private String shopName;
+	private String shopId;
+	private String shopPassword;
+	private String shopEmail;
+	private String shopCode;
+
+	public String execute(){
+		System.out.println(shopName);
+		System.out.println(shopId);
+		System.out.println(shopPassword);
+		System.out.println(shopEmail);
+		System.out.println(shopCode);
+	}
+
+	public String getShopName() {
+		return shopName;
+	}
+
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
+	}
+
+	public String getShopId() {
+		return shopId;
+	}
+
+	public void setShopId(String shopId) {
+		this.shopId = shopId;
+	}
+
+	public String getShopPassword() {
+		return shopPassword;
+	}
+
+	public void setShopPassword(String shopPassword) {
+		this.shopPassword = shopPassword;
+	}
+
+	public String getShopEmail() {
+		return shopEmail;
+	}
+
+	public void setShopEmail(String shopEmail) {
+		this.shopEmail = shopEmail;
+	}
+
+	public String getShopCode() {
+		return shopCode;
+	}
+
+	public void setShopCode(String shopCode) {
+		this.shopCode = shopCode;
+	}
+}

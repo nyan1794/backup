@@ -12,9 +12,12 @@ public class ShopItemUpdateCompleteAction extends ActionSupport implements Sessi
 	public Map<String,Object> session;
 	private ShopItemUpdateDAO shopItemUpdateDAO=new ShopItemUpdateDAO();
 	private String errorMassage;
+	private String insertShopCode;
 
 	public String execute() throws SQLException{
 		String result=ERROR;
+
+		if(session.get("shopCode").toString().equals(insertShopCode)){
 		errorMassage="商品情報の更新に失敗しました";
 		int resultInt=shopItemUpdateDAO.updateItem(
 				session.get("newItemName").toString(),
@@ -27,6 +30,10 @@ public class ShopItemUpdateCompleteAction extends ActionSupport implements Sessi
 			result=SUCCESS;
 			errorMassage=null;
 
+		}
+		}else{
+			result = "back";
+			errorMassage="店舗コードが間違っています";
 		}
 		return result;
 	}
@@ -41,6 +48,14 @@ public class ShopItemUpdateCompleteAction extends ActionSupport implements Sessi
 
 	public void setErrorMassage(String errorMassage) {
 		this.errorMassage = errorMassage;
+	}
+
+	public String getInsertShopCode() {
+		return insertShopCode;
+	}
+
+	public void setInsertShopCode(String insertShopCode) {
+		this.insertShopCode = insertShopCode;
 	}
 
 }

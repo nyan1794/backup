@@ -24,7 +24,7 @@ public class BuyItemDAO {
 	 */
 	public List<BuyItemDTO> getBuyItemInfo() {
 
-		String sql = "SELECT id, item_name, item_price,item_stock FROM item_info_transaction";
+		String sql = "SELECT id, item_name,shop_name,item_price,item_stock FROM item_info_transaction";
 		List<BuyItemDTO> buyItemList=new ArrayList<BuyItemDTO>();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -36,6 +36,7 @@ public class BuyItemDAO {
 				buyItemDTO.setItemName(resultSet.getString("item_name"));
 				buyItemDTO.setItemPrice(Integer.parseInt(resultSet.getString("item_price")));
 				buyItemDTO.setItemStock(resultSet.getInt("item_stock"));
+				buyItemDTO.setShopName(resultSet.getString("shop_name"));
 				buyItemList.add(buyItemDTO);
 
 			}

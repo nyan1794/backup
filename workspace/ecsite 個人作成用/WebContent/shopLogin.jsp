@@ -69,6 +69,8 @@ clear:both;
 				<s:password name="shopLoginPassword" label="Shopパスワード"/>
 				<s:submit value="ログイン" />
 			</s:form>
+
+			新店舗出店は<a href="<s:url action='ShopCreateAction' />">こちら</a>
 		</s:if>
 		<s:else>
 			<h1>購入者IDでログイン済みです</h1>

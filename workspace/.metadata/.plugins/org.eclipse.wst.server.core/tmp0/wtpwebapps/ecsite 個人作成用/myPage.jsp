@@ -84,6 +84,7 @@
 				<th>商品名</th>
 				<th>値段</th>
 				<th>購入個数</th>
+				<th>出品店舗名</th>
 				<th>合計金額</th>
 				<th>支払い方法</th>
 				<th>購入日</th>
@@ -94,6 +95,7 @@
 					<td><s:property value="itemName" /></td>
 					<td><s:property value="totalItemPrice" /><span>円</span></td>
 					<td><s:property value="totalCount" /><span>個</span></td>
+					<td><s:property value="shopName" /</td>
 					<td><s:property value="totalPrice" /></td>
 					<td><s:property value="payment" /></td>
 					<td><s:property value="insert_date" /></td>

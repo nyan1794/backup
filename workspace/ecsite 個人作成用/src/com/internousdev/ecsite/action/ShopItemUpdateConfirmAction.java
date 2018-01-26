@@ -21,7 +21,6 @@ public class ShopItemUpdateConfirmAction extends ActionSupport implements Sessio
 	public String execute(){
 		String result =ERROR;
 
-
 		if((newItemPrice.matches("^[0-9]{1,10}")) && (addItemStock.matches("^[0-9]{1,10}"))){
 
 			int oldStock=Integer.parseInt(oldItemStock);

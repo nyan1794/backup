@@ -59,8 +59,11 @@
 	<div id="main">
 		<div id="top">
 			<p>変更箇所を確認してください</p>
+			確認が完了したら、店舗コードを入力して
+			<p>変更を完了してください</p>
 		</div>
 		<div>
+			<h1><s:property value="errorMassage" /></h1>
 			<table border="1">
 				<tr>
 					<th>商品名</th>
@@ -84,6 +87,7 @@
 				</tr>
 			</table>
 			<s:form action="ShopItemUpdateCompleteAction">
+				<s:password name="insertShopCode"/>
 				<s:submit value="確定" />
 			</s:form>
 		</div>

@@ -18,6 +18,8 @@ public class BuyItemDTO {
 
 	private int totalPrice;
 
+	private String shopName;
+
 	public String getItemName() {
 		return itemName;
 	}
@@ -77,5 +79,13 @@ public class BuyItemDTO {
 
 	public void setItemStock(int itemStock) {
 		this.itemStock = itemStock;
+	}
+
+	public String getShopName() {
+		return shopName;
+	}
+
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
 	}
 }

@@ -57,13 +57,18 @@
 			background-color: black;
 			clear:both;
 		}
+		#pr{
+			line-height:80px;
+			margin-left:100px;
+		}
 	</style>
 </head>
 <body>
 	<div id="header">
 	 	<div id="pr">
-	 	<s:form action="BuyItemSerchAction">
+	 	<s:form action="BuyItemSearchAction" theme="simple">
 	 		<s:textfield name="itemSearch"/>
+	 		<s:submit value="検索"/>
 	 	</s:form>
 		</div>
 	</div>
@@ -101,6 +106,10 @@
 							<option value="5">5</option>
 						</select>
 					</td>
+				</tr>
+				<tr>
+					<td><span>出品店舗名</span></td>
+					<td><s:property value="shopName" /></td>
 				</tr>
 				<tr><td><br></td></tr>
 

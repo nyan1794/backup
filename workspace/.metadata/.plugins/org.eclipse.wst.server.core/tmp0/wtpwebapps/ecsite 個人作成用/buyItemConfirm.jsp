@@ -93,8 +93,13 @@
 					<td><s:property value="count" /><span>個</span></td>
 				</tr>
 				<tr>
-					<td><br><br></td>
+					<td>出品店舗</td>
+					<td><s:property value="shopName" /></td>
 				</tr>
+				<tr>
+					<td><br></td>
+				</tr>
+
 				</s:iterator>
 				<tr>
 					<td>合計金額</td>

@@ -80,12 +80,12 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		int res = myPageDAO.buyItemHistoryDelete(user_master_id,id);
 		myPageList=myPageDAO.getMyPageResult(user_master_id);
 		if(res > 0) {
-			setMessage("商品情報を正しく削除しました。");
+			setMessage("カート内の商品を正しく削除しました。");
 			if(myPageList.size()==0){
 				myPageList=null;
 			}
 		} else if(res == 0) {
-			setMessage("商品情報の削除に失敗しました。");
+			setMessage("カート内の商品の削除に失敗しました。");
 		}
 	}
 

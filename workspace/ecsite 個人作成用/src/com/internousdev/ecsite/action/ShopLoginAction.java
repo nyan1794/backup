@@ -29,6 +29,7 @@ public class ShopLoginAction extends ActionSupport implements SessionAware{
 		session.put("shopLoginId",shopLoginDTO.getShopLoginId());
 		session.put("shopLoginPass",shopLoginDTO.getShopLoginPassword());
 		session.put("shopName",shopLoginDTO.getShopName());
+		session.put("shopCode",shopLoginDTO.getShopCode());
 		shopSellItemList=shopLoginDAO.getShopItemInfo(shopLoginDTO.getShopName());
 		session.put("shopSellItemList",shopSellItemList);
 

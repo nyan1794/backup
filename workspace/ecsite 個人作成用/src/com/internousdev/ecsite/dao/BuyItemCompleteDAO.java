@@ -16,7 +16,7 @@ public class BuyItemCompleteDAO {
 
 	private DateUtil dateUtil = new DateUtil();
 
-	private String sql = "INSERT INTO user_buy_item_transaction (item_transaction_id, total_item_price, total_count, user_master_id,total_price, pay,order_num, insert_date) VALUES(?,?,?,?,?,?,?,?)";
+	private String sql = "INSERT INTO user_buy_item_transaction (item_transaction_id, total_item_price, total_count,shop_name, user_master_id,total_price, pay,order_num, insert_date) VALUES(?,?,?,?,?,?,?,?,?)";
 
 	/**
 	 * 商品購入情報登録メソッド
@@ -43,18 +43,19 @@ public class BuyItemCompleteDAO {
 		}
 		return findCount;
 	}
-	public void buyItemeInfo(int item_transaction_id, String user_master_id, int total_item_price, int total_count,int total_price, String pay,String order_num) throws SQLException {
+	public void buyItemeInfo(int item_transaction_id, String user_master_id, int total_item_price, int total_count,int total_price, String pay,String order_num,String shop_name) throws SQLException {
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, item_transaction_id);
 			preparedStatement.setInt(2, total_item_price);
 			preparedStatement.setInt(3, total_count);
-			preparedStatement.setString(4, user_master_id);
-			preparedStatement.setInt(5,total_price);
-			preparedStatement.setString(6, pay);
-			preparedStatement.setString(7,order_num);
-			preparedStatement.setString(8, dateUtil.getDate());
+			preparedStatement.setString(4,shop_name);
+			preparedStatement.setString(5, user_master_id);
+			preparedStatement.setInt(6,total_price);
+			preparedStatement.setString(7, pay);
+			preparedStatement.setString(8,order_num);
+			preparedStatement.setString(9, dateUtil.getDate());
 
 			preparedStatement.execute();
 

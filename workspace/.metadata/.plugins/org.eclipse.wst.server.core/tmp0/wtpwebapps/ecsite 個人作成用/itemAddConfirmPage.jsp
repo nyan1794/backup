@@ -56,8 +56,11 @@
 		<div id="main">
 			<div id="top">
 				<p>追加商品の確認</p>
+				確認が終了したら、店舗コードを入力して
+				<p>商品追加を完了してください</p>
 			</div>
 			<div>
+				<h1><s:property value="errorMassage"/></h1>
 				<h3>追加する商品はこちらでよろしいですか？</h3>
 				商品名
 				<s:property value="#session.sellItemName" />
@@ -69,6 +72,7 @@
 				<s:property value="#session.sellItemStock" />個
 				<br><br>
 				<s:form action="ItemAddCompleteAction" >
+					<s:password name="insertShopCode"/>
 					<s:submit value="完了" />
 				</s:form>
 			</div>
