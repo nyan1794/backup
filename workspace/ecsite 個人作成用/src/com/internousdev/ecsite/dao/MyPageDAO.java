@@ -26,7 +26,7 @@ public class MyPageDAO {
 		ArrayList<MyPageDTO> myPageDTO = new ArrayList<MyPageDTO>();
 		Connection connection = dbConnector.getConnection();
 
-		String sql = "SELECT ubit.id, iit.item_name,ubit.total_item_price , ubit.total_price, ubit.total_count, ubit.pay, ubit.insert_date FROM user_buy_item_transaction ubit LEFT JOIN item_info_transaction iit ON ubit.item_transaction_id = iit.id WHERE ubit.user_master_id  = ? ORDER BY insert_date DESC";
+		String sql = "SELECT ubit.id,ubit.order_num,iit.item_name,ubit.total_item_price ,ubit.shop_name, ubit.total_price, ubit.total_count, ubit.pay, ubit.insert_date FROM user_buy_item_transaction ubit LEFT JOIN item_info_transaction iit ON ubit.item_transaction_id = iit.id WHERE ubit.user_master_id  = ? ORDER BY insert_date DESC";
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -40,6 +40,8 @@ public class MyPageDAO {
 				dto.setItemName(resultSet.getString("item_name"));
 				dto.setTotalPrice(resultSet.getString("total_price"));
 				dto.setTotalCount(resultSet.getString("total_count"));
+				dto.setShopName(resultSet.getString("shop_name"));
+				dto.setOrderNum(resultSet.getString("order_num"));
 				dto.setTotalItemPrice(resultSet.getString("total_item_price"));
 				dto.setPayment(resultSet.getString("pay"));
 				dto.setInsert_date(resultSet.getString("insert_date"));

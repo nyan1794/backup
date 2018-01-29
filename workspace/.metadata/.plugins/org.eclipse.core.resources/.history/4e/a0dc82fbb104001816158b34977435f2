@@ -1,0 +1,34 @@
+package com.internousdev.ecsite.dao;
+
+import com.internousdev.ecsite.util.DBConnector;
+import com.internousdev.ecsite.util.DateUtil;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class AddAddressDAO {
+	private DBConnector dbConnector= new DBConnector();
+	private Connection connection=dbConnector.getConnection();
+	private DateUtil dateUtil=new DateUtil();
+
+	public int addAddressSQL(String user_master_id,String address) throws SQLException{
+		String sql="INSERT INTO user_address_list(user_master_id,address,insert_date) VALUES(?,?,?)";
+		int result=0;
+		try{
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1,user_master_id);
+			preparedStatement.setString(2,address);
+			preparedStatement.setString(3,dateUtil.getDate());
+			result = preparedStatement.executeUpdate();
+
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			connection.close();
+		}
+		return result;
+	}
+
+
+}

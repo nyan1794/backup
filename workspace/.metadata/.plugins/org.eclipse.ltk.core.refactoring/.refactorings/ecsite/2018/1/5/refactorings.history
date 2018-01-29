@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="フィールド &apos;com.internousdev.ecsite.dto.MyPageDTO.shopName&apos; を &apos;com.internousdev.ecsite.dto.MyPageDTO&apos;にカプセル化します&#x0A;- 元のプロジェクト: &apos;ecsite&apos;&#x0A;- オリジナル要素: &apos;com.internousdev.ecsite.dto.MyPageDTO.shopName&apos;&#x0A;- getter メソッド名: &apos;getShopName&apos;&#x0A;- setter メソッド名: &apos;setShopName&apos;&#x0A;- フィールドの可視性: &apos;public&apos;&#x0A;- 宣言型の getter および setter メソッドを使用" comments="false" declaring="true" description="フィールド &apos;shopName&apos; をカプセル化します" flags="589830" getter="getShopName" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;com.internousdev.ecsite.dto{MyPageDTO.java[MyPageDTO^shopName" insertion="13" setter="setShopName" stamp="1517187767821" version="1.0" visibility="1"/>
+</session>

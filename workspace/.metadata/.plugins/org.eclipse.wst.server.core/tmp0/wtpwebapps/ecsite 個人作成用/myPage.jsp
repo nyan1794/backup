@@ -75,10 +75,10 @@
 		</div>
 		<div>
 		<s:if test="myPageList == null">
-			<h3>ご購入情報はありません。</h3>
+			<h3>カートの中身はありません。</h3>
 		</s:if>
 		<s:elseif test="myPageList != null">
-			<h3>ご購入情報は以下になります。</h3>
+			<h3>カートの中身は以下になります。</h3>
 			<table border="1">
 			<tr>
 				<th>商品名</th>
@@ -95,7 +95,7 @@
 					<td><s:property value="itemName" /></td>
 					<td><s:property value="totalItemPrice" /><span>円</span></td>
 					<td><s:property value="totalCount" /><span>個</span></td>
-					<td><s:property value="shopName" /</td>
+					<td><s:property value="shopName" /></td>
 					<td><s:property value="totalPrice" /></td>
 					<td><s:property value="payment" /></td>
 					<td><s:property value="insert_date" /></td>
@@ -109,6 +109,9 @@
 				</tr>
 			</s:iterator>
 			</table>
+			<s:form action="BuyItemFromCartAction" >
+				<s:submit value="購入"/>
+			</s:form>
 
 		</s:elseif>
 		<s:if test="message != null">

@@ -1,8 +1,0 @@
-package com.internousdev.ecsite.action;
-
-public class ShopItemUpdateAction extends ActionSupport implements SessionAware{
-	public Map<String,Object> session;
-	public String execute(){
-
-	}
-}

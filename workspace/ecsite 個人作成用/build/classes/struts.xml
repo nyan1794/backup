@@ -187,5 +187,23 @@
 			<result name="back">shopCreate.jsp</result>
 			<result name="error">shopCreateEmail.jsp</result>
 		</action>
+
+
+		<!-- カート機能 -->
+		<action name="BuyItemFromCartAction" class="com.internousdev.ecsite.action.BuyItemFromCartAction" method="execute">
+			<result name="success">buyItemFromCart.jsp</result>
+		</action>
+
+		<action name="BuyItemFromCartConfirmAction" class="com.internousdev.ecsite.action.BuyItemFromCartConfirmAction" method="execute">
+			<result name="success">buyItemFromCartAddress.jsp</result>
+		</action>
+
+		<action name="AddressAddAction" class="com.internousdev.ecsite.action.AddressAddAction" method="execute">
+			<result name="success">buyItemFromCartAddress.jsp</result>
+		</action>
+
+		<action name="BuyItemFromCartCompleteAction" class="com.internousdev.ecsite.action.BuyItemFromCartCompleteAction" method="execute">
+			<result name="success">aaa.jsp</result>
+		</action>
 	</package>
 </struts>

@@ -1,6 +1,0 @@
-package com.internousdev.ecsite.action;
-
-public class GoShopMainAction extends ActionSupport implements SessionAware{
-	public Map<String,Object> session;
-
-}

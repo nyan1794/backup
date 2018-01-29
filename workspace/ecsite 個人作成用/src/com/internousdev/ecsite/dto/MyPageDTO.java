@@ -10,6 +10,8 @@ public class MyPageDTO {
 
 	private String totalCount;
 
+	private String shopName;
+
 	private String payment;
 
 	private String userName;
@@ -17,6 +19,8 @@ public class MyPageDTO {
 	private String id;
 
 	private String insert_date;
+
+	private String orderNum;
 
 	public String getItemName() {
 		return itemName;
@@ -80,6 +84,22 @@ public class MyPageDTO {
 
 	public void setInsert_date(String insert_date) {
 		this.insert_date = insert_date;
+	}
+
+	public String getShopName() {
+		return shopName;
+	}
+
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
+	}
+
+	public String getOrderNum() {
+		return orderNum;
+	}
+
+	public void setOrderNum(String orderNum) {
+		this.orderNum = orderNum;
 	}
 
 }

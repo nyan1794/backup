@@ -29,6 +29,8 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 	public List<BuyItemDTO> buyItemConfirmList = new ArrayList<BuyItemDTO>();
 
+	private String errorMassage=null;
+
 
 	/**
 	 * 商品情報取得メソッド
@@ -38,9 +40,18 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	@SuppressWarnings("unchecked")
 	public String execute() {
 		String result = SUCCESS;
+
 		int totalPrice=0;
 		int j=0;
 		List<BuyItemDTO> buyItemList = (List<BuyItemDTO>)session.get("buyItemList");
+		for(int i=0;buyItemList.size() > i;i++){
+			int selectCount=count.get(i);
+			int itemStockInt=buyItemList.get(i).getItemStock();
+			if(selectCount > itemStockInt){
+				setErrorMassage("在庫数が足りません。");
+				return ERROR;
+			}
+		}
 		for(int i=0; buyItemList.size() > i; i++) {
 			int intPrice = buyItemList.get(i).getItemPrice();
 			int intCount = count.get(i);
@@ -49,14 +60,18 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 			buyItemList.get(i).setItemTotalPrice(intCount * intPrice);
 			int price=buyItemList.get(i).getItemTotalPrice();
 			totalPrice+=price;
+
+		}
+		session.put("totalPrice",totalPrice);
+
+		for(int i=0;buyItemList.size() > i ; i++){
 			buyItemList.get(i).setTotalPrice(totalPrice);
 			int itemcount = buyItemList.get(i).getCount();
 			if(!(itemcount == 0)){
 				buyItemConfirmList.add(j,buyItemList.get(i));
 				j++;
+				}
 			}
-		}
-		session.put("totalPrice",totalPrice);
 		session.put("buyItemConfirmList",buyItemConfirmList);
 		return result;
 	}
@@ -75,6 +90,14 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 	public void setBuyItemConfirmList(List<BuyItemDTO> buyItemConfirmList) {
 		this.buyItemConfirmList = buyItemConfirmList;
+	}
+
+	public String getErrorMassage() {
+		return errorMassage;
+	}
+
+	public void setErrorMassage(String errorMassage) {
+		this.errorMassage = errorMassage;
 	}
 
 

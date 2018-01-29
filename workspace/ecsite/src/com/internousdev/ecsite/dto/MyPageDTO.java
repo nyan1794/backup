@@ -6,6 +6,7 @@ public class MyPageDTO {
 	public String totalCount;
 	public String payment;
 	public String userName;
+	private String shopName;
 	public String id;
 	public String insert_date;
 
@@ -50,5 +51,11 @@ public class MyPageDTO {
 	}
 	public void setInsert_date(String insert_date){
 		this.insert_date=insert_date;
+	}
+	public String getShopName() {
+		return shopName;
+	}
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
 	}
 }

@@ -1,0 +1,27 @@
+package com.internousdev.ecsite.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class AddressAddAction extends ActionSupport implements SessionAware{
+	public Map<String,Object> session;
+	private String newZipcode1;
+	private String newZipcode2;
+	private String newPrefecture;
+	private String newCity;
+	private String newAddress;
+	private String newBuilding;
+	public String execute(){
+		String user_master_id=session.get("login_user_id").toString();
+
+	}
+
+
+
+	public void setSession(Map<String,Object> session){
+		this.session=session;
+	}
+}

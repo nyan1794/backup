@@ -1,0 +1,21 @@
+package com.internousdev.ecsite.action;
+
+import java.util.Map;
+
+import javax.mail.Session;
+
+import com.internousdev.ecsite.dto.LoginDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class BuyItemFromCartConfirmAction extends ActionSupport implements SessionAware{
+	private LoginDTO loginDTO = new LoginDTO();
+	public Map<String,Object> session;
+	public String execute(){
+	loginDTO = (LoginDTO))
+	return SUCCESS;
+	}
+
+	public void setSession(Map<String,Object> session){
+		this.session=session;
+	}
+}

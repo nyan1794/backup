@@ -62,6 +62,18 @@ order_num varchar(8),
 insert_date datetime,
 delete_date datetime
 );
+drop table if exists user_address_transaction;
+
+create table user_address_transaction(
+id int not null primary key auto_increment,
+user_master_id varchar(20),
+zipcode varchar(10),
+prefecture varchar(10),
+city varchar(100),
+address varchar(100),
+building varchar(200),
+insert_date datetime
+);
 
 INSERT INTO shop_login_transaction(shop_id, shop_pass, shop_name) VALUES("1","1","Internous");
 INSERT INTO item_info_transaction(item_name, item_price, item_stock,shop_name,insert_date) VALUES("NoteBook", 100, 50,"Internous","2018-01-01 00:00:00");

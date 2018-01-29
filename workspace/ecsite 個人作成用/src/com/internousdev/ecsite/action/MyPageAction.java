@@ -54,6 +54,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 			String user_master_id = session.get("login_user_id").toString();
 
 			myPageList=myPageDAO.getMyPageUserInfo(user_master_id);
+			session.put("myPageList",myPageList);
 			if(myPageList.size()==0){
 				myPageList=null;
 			}
@@ -61,6 +62,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		// 商品履歴を削除する場合
 		} else if(deleteFlg.equals("1")) {
 			delete();
+			session.put("myPageList",myPageList);
 		}
 
 		String result = SUCCESS;

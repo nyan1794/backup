@@ -1,0 +1,38 @@
+package com.internousdev.ecsite.action;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ecsite.dto.MyPageDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class BuyItemFromCartAction extends ActionSupport implements SessionAware{
+	private List<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
+	public Map<String,Object> session;
+	@SuppressWarnings("unchecked")
+	public String execute(){
+		myPageList = (List<MyPageDTO>)session.get("myPageList");
+		for(int i = 0;myPageList.size() > i ;i++){
+			System.out.println(myPageList.get(i).getId());
+			System.out.println(myPageList.get(i).getItemName());
+			System.out.println(myPageList.get(i).getShopName());
+			System.out.println(myPageList.get(i).getTotalCount());
+			System.out.println(myPageList.get(i).getTotalItemPrice());
+
+		}
+		return SUCCESS;
+	}
+
+	public List<MyPageDTO> getMyPageList() {
+		return myPageList;
+	}
+
+	public void setMyPageList(List<MyPageDTO> myPageList) {
+		this.myPageList = myPageList;
+	}
+
+
+}

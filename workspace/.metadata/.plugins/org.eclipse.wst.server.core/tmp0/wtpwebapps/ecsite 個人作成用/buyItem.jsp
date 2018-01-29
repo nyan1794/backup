@@ -67,7 +67,7 @@
 	<div id="header">
 	 	<div id="pr">
 	 	<s:form action="BuyItemSearchAction" theme="simple">
-	 		<s:textfield name="itemSearch"/>
+	 		<s:textfield name="itemSearch" placeholder="商品検索  例 商品名  店舗名"/>
 	 		<s:submit value="検索"/>
 	 	</s:form>
 		</div>
@@ -77,6 +77,9 @@
 			<p>BuyItem</p>
 		</div>
 		<div>
+		<s:if test="errorMassage != null">
+			<h3><s:property value="errorMassage" /></h3>
+		</s:if>
 
 		<s:form action="BuyItemAction">
 				<s:iterator value="#session.buyItemList">
@@ -93,6 +96,16 @@
 					<td>
 						<s:property value="itemPrice" /><span>円</span>
 					</td>
+				</tr>
+				<tr>
+					<td><span>在庫数</span></td>
+					<s:if test="itemStock == 0">
+						<td>売り切れ</td>
+					</s:if>
+					<s:else>
+						<td><s:property value="itemStock" /><span>個</span></td>
+					</s:else>
+
 				</tr>
 				<tr>
 					<td><span>購入個数</span></td>
