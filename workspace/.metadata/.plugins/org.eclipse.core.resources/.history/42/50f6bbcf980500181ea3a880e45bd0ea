@@ -1,0 +1,8 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class ganbaru {
+	public static void main(String[] args){
+		List<ShopDTO> shopList = new ArrayList<ShopDTO>();
+	}
+}

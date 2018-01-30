@@ -32,6 +32,7 @@ public class BuyItemFromCartConfirmAction extends ActionSupport implements Sessi
 	session.put("city",loginDTO.getUserCity());
 	session.put("address",loginDTO.getUserAddress());
 	session.put("building",loginDTO.getUserBuilding());
+
 	user_master_id=session.get("login_user_id").toString();
 
 

@@ -1,0 +1,5 @@
+
+public class ShopDAO {
+	ShopDTO s = new ShopDTO();
+
+}

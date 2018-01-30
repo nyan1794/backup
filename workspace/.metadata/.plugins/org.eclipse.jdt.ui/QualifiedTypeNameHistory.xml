@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.internousdev.webproj4.dto.LoginDTO"/>
-<fullyQualifiedTypeName name="com.internousdev.webproj4.dao.TestDAO"/>
 <fullyQualifiedTypeName name="com.internousdev.webproj5.dto.LoginDTO"/>
 <fullyQualifiedTypeName name="com.internousdev.webproj5.dao.LoginDAO"/>
 <fullyQualifiedTypeName name="com.internousdev.webproj5.dto.InquiryDTO"/>
@@ -20,7 +18,6 @@
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.UserCreateCompleteDAO"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.BuyItemDAO"/>
-<fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.BuyItemCompleteDAO"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.MyPageDAO"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
@@ -36,28 +33,31 @@
 <fullyQualifiedTypeName name="java.util.Properties"/>
 <fullyQualifiedTypeName name="javax.mail.internet.AddressException"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.ShopItemUpdateDAO"/>
-<fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.UserInfoUpdateDAO"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.LoginDAO"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.Connection"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.BuyItemSearchDAO"/>
-<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.BuyItemDTO"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.util.MailSend"/>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.ShopCreateDAO"/>
-<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.MyPageDTO"/>
-<fullyQualifiedTypeName name="com.internousdev.ecsite.util.DBConnector"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-<fullyQualifiedTypeName name="com.internousdev.ecsite.util.DateUtil"/>
-<fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dto.LoginDTO"/>
 <fullyQualifiedTypeName name="javax.mail.Session"/>
-<fullyQualifiedTypeName name="org.apache.struts2.interceptor.SessionAware"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dto.AddressDTO"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.AddAddressDAO"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="org.apache.struts2.interceptor.SessionAware"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.MyPageDTO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dao.BuyItemFromCartDAO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.util.DBConnector"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.util.DateUtil"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dao.ShopOrderDAO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.BuyItemDTO"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

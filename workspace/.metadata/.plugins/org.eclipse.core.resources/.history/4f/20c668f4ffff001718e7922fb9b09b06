@@ -1,7 +1,0 @@
-package com.internousdev.ecsite.action;
-
-public class ShopItemUpdateComfirmAction extends ActionSupport implements SessionAware{
-	private String newItemName;
-	private String newItemPrice;
-	private String addItemStock;
-}

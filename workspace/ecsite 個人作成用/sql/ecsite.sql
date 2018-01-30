@@ -75,6 +75,29 @@ building varchar(200),
 insert_date datetime
 );
 
+drop table if exists user_order_transaction;
+
+create table user_order_transaction(
+id int not null primary key auto_increment,
+item_transaction_id int,
+item_name varchar(30),
+item_count int,
+item_total_price int,
+total_price int,
+user_master_id varchar(20),
+pay varchar(20),
+order_num varchar(16),
+zipcode varchar(14),
+prefecture varchar(10),
+city varchar(50),
+address varchar(100),
+building varchar(100),
+show_flg varchar(2),
+send_flg varchar(2),
+insert_date datetime,
+updated_date datetime
+);
+
 INSERT INTO shop_login_transaction(shop_id, shop_pass, shop_name) VALUES("1","1","Internous");
 INSERT INTO item_info_transaction(item_name, item_price, item_stock,shop_name,insert_date) VALUES("NoteBook", 100, 50,"Internous","2018-01-01 00:00:00");
 INSERT INTO item_info_transaction(item_name, item_price, item_stock,shop_name,insert_date) VALUES("MacBook", 500, 50,"Internous","2018-01-01 00:00:00");

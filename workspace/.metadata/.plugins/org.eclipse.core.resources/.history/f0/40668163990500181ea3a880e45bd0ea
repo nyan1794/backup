@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class ShopDAO {private ShopDTO s = new ShopDTO();
+
+	private List<ShopDTO> list = new ArrayList<ShopDTO>();
+	public List<ShopDTO> setDTO(){
+		ShopDTO DTO = new ShopDTO();
+		s.setAaa("aaa");
+		s.setBbb("aaa");
+		s.setCcc("aaa");
+		list.add(DTO);
+
+
+		return list;
+		}
+
+}

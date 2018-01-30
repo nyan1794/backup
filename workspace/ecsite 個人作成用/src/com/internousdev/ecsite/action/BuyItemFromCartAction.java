@@ -19,6 +19,7 @@ public class BuyItemFromCartAction extends ActionSupport implements SessionAware
 		for(int i=0;myPageList.size() > i;i++){
 			orderTotalPrice+=Integer.parseInt(myPageList.get(i).getTotalItemPrice());
 		}
+		session.put("orderTotalPrice", orderTotalPrice);
 		return SUCCESS;
 	}
 

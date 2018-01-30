@@ -1,0 +1,64 @@
+package com.internousdev.ecsite.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.internousdev.ecsite.util.DBConnector;
+import com.internousdev.ecsite.util.DateUtil;
+
+public class BuyItemFromCartDAO {
+	private DBConnector dbConnector = new DBConnector();
+	private DateUtil dateUtil = new DateUtil();
+ 	public int insertOrder(String user_master_id,String item_name,String item_transaction_id,String item_count,
+			String item_total_price,String order_total_price,String pay,String order_num,String zipcode,String prefecture,
+			String city,String address,String building) throws SQLException{
+
+ 		int result = 0;
+		Connection connection =dbConnector.getConnection();
+		String sql="INSERT INTO user_order_transaction(user_master_id,item_name,item_transaction_id,item_count,item_total_price,order_total_price,"
+				+ "pay,order_num,zipcode,prefecture,city,address,building,show_flg,insert_date) "
+				+ "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		try{
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		preparedStatement.setString(1,user_master_id);
+		preparedStatement.setString(2,item_name);
+		preparedStatement.setString(3,item_transaction_id);
+		preparedStatement.setString(4,item_count);
+		preparedStatement.setString(5,item_total_price);
+		preparedStatement.setString(6,order_total_price);
+		preparedStatement.setString(7,pay);
+		preparedStatement.setString(8,order_num);
+		preparedStatement.setString(9,zipcode);
+		preparedStatement.setString(10,prefecture);
+		preparedStatement.setString(11,city);
+		preparedStatement.setString(12,address);
+		preparedStatement.setString(13,building);
+		preparedStatement.setString(14,"1");
+		preparedStatement.setString(15,dateUtil.getDate());
+		result = preparedStatement.executeUpdate();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			connection.close();
+		}
+		return result;
+	}
+
+ 	public int deleteFromCart(String user_master_id) throws SQLException{
+ 		Connection connection = dbConnector.getConnection();
+ 		String sql="DELETE FROM user_buy_item_transaction WHERE user_master_id=?";
+ 		int result=0;
+
+ 		try{
+ 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+ 			preparedStatement.setString(1,user_master_id);
+ 			result = preparedStatement.executeUpdate();
+ 		}catch(SQLException e){
+ 			e.printStackTrace();
+ 		}finally{
+ 			connection.close();
+ 		}
+ 		return result;
+ 	}
+}

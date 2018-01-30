@@ -1,0 +1,38 @@
+package com.internousdev.ecsite.dao;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import com.internousdev.ecsite.util.DBConnector;
+import com.internousdev.ecsite.util.DateUtil;
+import java.sql.PreparedStatement;
+
+public class BuyItemFromCartDAO {
+	private DBConnector dbConnector = new DBConnector();
+	private DateUtil dateUtil = new DateUtil();
+ 	public int insertOrder(String user_master_id,String item_name,String item_transaction_id,String item_count,
+			String item_total_price,String total_price,String pay,String order_num){
+
+ 		int result = 0;
+		Connection connection =dbConnector.getConnection();
+		String sql="INSERT INTO user_order_transaction(user_master_id,item_name,item_transaction_id,item_count,item_total_price,total_price,pay,order_num,insert_date) "
+				+ "VALUES (?,?,?,?,?,?,?,?,?)";
+		try{
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		preparedStatement.setString(1,user_master_id);
+		preparedStatement.setString(2,item_name);
+		preparedStatement.setString(3,item_transaction_id);
+		preparedStatement.setString(4,item_count);
+		preparedStatement.setString(5,item_total_price);
+		preparedStatement.setString(6,total_price);
+		preparedStatement.setString(7,pay);
+		preparedStatement.setString(8,order_num);
+		preparedStatement.setString(9,dateUtil.getDate());
+		result = preparedStatement.executeUpdate();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			connection.close();
+		}
+	}
+}
