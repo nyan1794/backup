@@ -14,6 +14,8 @@ public class MyPageDTO {
 
 	private String payment;
 
+	private String shopOrderTotalPrice;
+
 	private String userName;
 
 	private String id;
@@ -100,6 +102,14 @@ public class MyPageDTO {
 
 	public void setOrderNum(String orderNum) {
 		this.orderNum = orderNum;
+	}
+
+	public String getShopOrderTotalPrice() {
+		return shopOrderTotalPrice;
+	}
+
+	public void setShopOrderTotalPrice(String shopOrderTotalPrice) {
+		this.shopOrderTotalPrice = shopOrderTotalPrice;
 	}
 
 }

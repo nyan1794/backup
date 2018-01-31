@@ -1,0 +1,6 @@
+package com.internousdev.ecsite.dto;
+
+public class orderPriceDTO {
+	private String shopName;
+	private String orderShopTotalPrice;
+}

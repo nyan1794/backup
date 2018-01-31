@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.internousdev.webproj5.dto.LoginDTO"/>
-<fullyQualifiedTypeName name="com.internousdev.webproj5.dao.LoginDAO"/>
-<fullyQualifiedTypeName name="com.internousdev.webproj5.dto.InquiryDTO"/>
-<fullyQualifiedTypeName name="com.internousdev.webproj5.util.DBConnector"/>
-<fullyQualifiedTypeName name="com.internousdev.webproj5.dao.TestDAO"/>
 <fullyQualifiedTypeName name="com.internousdev.template.dao.BuyItemDAO"/>
 <fullyQualifiedTypeName name="com.internousdev.template.dto.LoginDTO"/>
 <fullyQualifiedTypeName name="com.internousdev.template.dto.BuyItemDTO"/>
@@ -21,7 +16,6 @@
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.BuyItemCompleteDAO"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.MyPageDAO"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dto.BuyItemConfirmDTO"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dto.ShopLoginDTO"/>
@@ -41,23 +35,29 @@
 <fullyQualifiedTypeName name="com.internousdev.ecsite.util.MailSend"/>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.ShopCreateDAO"/>
-<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.LoginDTO"/>
 <fullyQualifiedTypeName name="javax.mail.Session"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dto.AddressDTO"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.AddAddressDAO"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="org.apache.struts2.interceptor.SessionAware"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dto.MyPageDTO"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.BuyItemFromCartDAO"/>
-<fullyQualifiedTypeName name="com.internousdev.ecsite.util.DBConnector"/>
-<fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.util.DateUtil"/>
-<fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dao.ShopOrderDAO"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dto.BuyItemDTO"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.TreeSet"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.OrderPriceDTO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dao.OrderPriceDAO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.util.CreateOrderMailBody"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.util.OrderMailSend"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.LoginDTO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.util.DBConnector"/>
 </qualifiedTypeNameHistroy>

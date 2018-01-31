@@ -5,3 +5,7 @@
 1517200227202	フィールド 'orderTotalPrice' をカプセル化します
 1517212950345	フィールド 'errorMassage' をカプセル化します
 1517297110510	型名 'orderPriceDAO' を変更します
+1517362320716	型名 'orderPriceDTO' を変更します
+1517364053176	フィールド 'shopOrderTotalPrice' をカプセル化します
+1517365397937	フィールド 'orderTotalPrice' をカプセル化します
+1517365465078	フィールド 'orderTotalPrice' をカプセル化します

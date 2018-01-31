@@ -74,6 +74,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			result = SUCCESS;
 			session.put("login_user_id",loginDTO.getLoginId());
 			session.put("login_user_password",loginDTO.getLoginPassword());
+			session.put("userName",loginDTO.getUserName());
 
 			errorMassage=null;
 			// アイテム情報を取得

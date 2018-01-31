@@ -12,7 +12,7 @@ public class ShopOrderDAO {
 	private DateUtil dateUtil = new DateUtil();
 
 	public int shopOrderResult(
-			String shop_name,String item_id,String item_name,String item_price,String item_count,String item_total_price,
+			String shop_name,String item_id,String item_name,String item_count,String item_total_price,
 			String shop_order_total_price,String order_num,String buy_zipcode,String buy_prefecture,String buy_city,
 			String buy_address,String buy_building,String buy_user_name,String buy_user_id) throws SQLException{
 

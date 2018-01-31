@@ -1,0 +1,125 @@
+package com.internousdev.ecsite.action;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ecsite.dao.BuyItemFromCartDAO;
+import com.internousdev.ecsite.dao.OrderPriceDAO;
+import com.internousdev.ecsite.dao.ShopOrderDAO;
+import com.internousdev.ecsite.dto.MyPageDTO;
+import com.internousdev.ecsite.dto.OrderPriceDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class BuyItemFromCartCompleteAction extends ActionSupport implements SessionAware{
+
+	private Map<String,Object> session;
+	private String zipcode;
+	private String prefecture;
+	private String city;
+	private String address;
+	private String building;
+	private List<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
+	private BuyItemFromCartDAO buyItemFromCartDAO = new BuyItemFromCartDAO();
+
+	@SuppressWarnings("unchecked")
+	public String execute() throws SQLException{
+
+		int insertResult=0;
+		myPageList=(List<MyPageDTO>)session.get("myPageList");
+		String user_master_id=session.get("login_user_id").toString();
+
+
+		for(int i =0;myPageList.size() > 0 ; i++){
+			insertResult+=buyItemFromCartDAO.insertOrder(
+					user_master_id,
+					myPageList.get(i).getItemName(),
+					myPageList.get(i).getId(),
+					myPageList.get(i).getTotalCount(),
+					myPageList.get(i).getTotalItemPrice(),
+					session.get("orderTotalPrice").toString(),
+					myPageList.get(i).getPayment(),
+					myPageList.get(i).getOrderNum(),
+					zipcode,
+					prefecture,
+					city,
+					address,
+					building
+					);
+		}
+		if(insertResult >0){
+				List<OrderPriceDTO> orderPriceList= new ArrayList<OrderPriceDTO>();
+				ShopOrderDAO shopOrderDAO = new ShopOrderDAO();
+				OrderPriceDAO orderPriceDAO= new OrderPriceDAO();
+				orderPriceList=orderPriceDAO.getShopOrderPrice(user_master_id);
+				for(int i = 0 ; orderPriceList.size() > i ; i++){
+					for(int j = 0;myPageList.size() > j;j++){
+						if(myPageList.get(j).getShopName().equals(orderPriceList.get(i).getShopName())){
+							myPageList.get(j).setShopOrderTotalPrice(orderPriceList.get(i).getOrderShopTotalPrice());
+						}
+					}
+				}
+
+				for(int i=0 ; myPageList.size() > i ; i++){
+				shopOrderDAO.shopOrderResult(
+						myPageList.get(i).getShopName(),
+						myPageList.get(i).getId(),
+						myPageList.get(i).getItemName(),
+						myPageList.get(i).getTotalCount(),
+						myPageList.get(i).getTotalItemPrice(),
+						myPageList.get(i).getShopOrderTotalPrice(),
+						myPageList.get(i).getOrderNum(),
+						zipcode,
+						prefecture,
+						city,
+						address,
+						building,
+						session.get("userName"),
+						user_master_id
+						);
+				}
+			}
+
+
+		return SUCCESS;
+	}
+
+	public String getZipcode() {
+		return zipcode;
+	}
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+	public String getPrefecture() {
+		return prefecture;
+	}
+	public void setPrefecture(String prefecture) {
+		this.prefecture = prefecture;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getBuilding() {
+		return building;
+	}
+	public void setBuilding(String building) {
+		this.building = building;
+	}
+
+	public void setSession(Map<String,Object> session){
+		this.session=session;
+	}
+
+}

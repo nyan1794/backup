@@ -21,6 +21,7 @@ public class BuyItemFromCartConfirmAction extends ActionSupport implements Sessi
 	private String address;
 	private String building;
 	private String user_master_id;
+	private String orderTotalPrice;
 	private List<AddressDTO> addressList =new ArrayList<AddressDTO>();
 	private AddAddressDAO addAddressDAO=new AddAddressDAO();
 
@@ -95,5 +96,13 @@ public class BuyItemFromCartConfirmAction extends ActionSupport implements Sessi
 
 	public Map<String, Object> getSession() {
 		return session;
+	}
+
+	public String getOrderTotalPrice() {
+		return orderTotalPrice;
+	}
+
+	public void setOrderTotalPrice(String orderTotalPrice) {
+		this.orderTotalPrice = orderTotalPrice;
 	}
 }

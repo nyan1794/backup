@@ -19,6 +19,7 @@ public class AddressAddAction extends ActionSupport implements SessionAware{
 	private String newCity;
 	private String newAddress;
 	private String newBuilding;
+	private String orderTotalPrice;
 	private AddAddressDAO addAddressDAO= new AddAddressDAO();
 	private List<AddressDTO> addressList=new ArrayList<AddressDTO>();
 	private String errorMassage = null;
@@ -140,5 +141,17 @@ public class AddressAddAction extends ActionSupport implements SessionAware{
 
 	public void setErrorMassage(String errorMassage) {
 		this.errorMassage = errorMassage;
+	}
+
+
+
+	public String getOrderTotalPrice() {
+		return orderTotalPrice;
+	}
+
+
+
+	public void setOrderTotalPrice(String orderTotalPrice) {
+		this.orderTotalPrice = orderTotalPrice;
 	}
 }
